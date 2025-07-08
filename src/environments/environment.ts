@@ -1,16 +1,9 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+
 export const environment = {
-  production: false,
-  reportDataLimit: 500,
-  userType: null,
-  airlineCode: null,
-  BACKEND_URL: 'https://report-development.infinitisoftware.net/reports/dashboard/',
-  REQUEST_URL: 'https://report-development.infinitisoftware.net/reports/historydetails/',
-  CUSTOME_BACKEND_URL: 'https://report-development.infinitisoftware.net/reports/custom-report/',
-  COMMON_URL: 'https://report-development.infinitisoftware.net/reports/common/',
-  ROOT_BACKEND_URL: 'https://report-development.infinitisoftware.net/reports/',
+  production: false
 };
 
 /*

@@ -1,0 +1,17 @@
+ <div class="sidebar">
+    <div class="user-info">
+      <div class="user-avatar">TL</div>
+      <div class="notification-icon">🔔</div>
+    </div>
+      <div class="nav-section">
+     
+      <div class="nav-section">
+        <ng-container *ngFor="let menu of menuData">
+            <h4>{{menu.mainmenu}}</h4>
+            <ul class="nav-list">
+                <li class="nav-item" *ngFor="let submenu of menu.submenu" routerLink="/{{submenu.route}}">{{submenu.name}}</li>
+            </ul>
+        </ng-container>
+        
+      </div>
+    </div>

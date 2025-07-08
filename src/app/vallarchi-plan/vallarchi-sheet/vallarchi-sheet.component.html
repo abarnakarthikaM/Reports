@@ -1,0 +1,90 @@
+
+<div class="plan-management-container">
+  <!-- Header Section -->
+  <div class="header-section">
+    <div class="date-info">
+      <span class="date-number">{{ currentDate.getDate() }}</span>
+      <span class="date-text">{{ getFormattedDate().split(',')[1] }}</span>
+    </div>
+    
+    <div class="product-dropdown">
+      <select 
+        class="product-select">
+        <option value="">Select product</option>
+        <option *ngFor="let product of products" [value]="product.id">
+          {{ product.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Plan Title -->
+    <div class="plan-title">
+      <h2>Vallarchi plan for (Feb) last month</h2>
+      <button class="filter-btn" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Left Panel - Task List -->
+      <div class="left-panel">
+        <div class="task-selection">
+          <select class="task-select">
+            <option>Select vallarchi task</option>
+          </select>
+        </div>
+
+        <div class="task-list">
+          <div *ngFor="let task of tasks" class="task-item">
+            <label class="task-label">
+              <input 
+                type="checkbox" 
+                [checked]="task.completed"
+                (change)="onTaskChange(task)"
+                class="task-checkbox">
+              <span class="task-text">{{ task.title }}</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="submit-view-btn" (click)="onSubmitAndView()">
+          Submit and view
+        </button>
+      </div>
+
+      <!-- Right Panel - Product Details -->
+      <div class="right-panel">
+        <div class="product-details" *ngIf="planDetails; else emptyState">
+          <div class="detail-item" *ngFor="let detail of planDetails.tasks; let i = index">
+            <span class="detail-number">{{ i + 1 }}.</span>
+            <span class="detail-text">{{ detail }}</span>
+            <button class="edit-btn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="manager-section">
+            <button class="send-manager-btn" (click)="onSendToManager()">
+              Send to manager
+            </button>
+          </div>
+        </div>
+
+        <ng-template #emptyState>
+          <div class="empty-state">
+            <p>Select a product to view details</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

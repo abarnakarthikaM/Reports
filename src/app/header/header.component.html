@@ -1,0 +1,18 @@
+ <div class="header-section">
+    
+    
+    <div class="date-display">
+      <h2>{{ getFormattedDate() }}</h2>
+    </div>
+    
+    <div class="product-selector">
+      <label for="productSelect">Select product</label>
+      <select 
+        id="productSelect" 
+        formControlName="selectedProduct"
+        class="form-control">
+        <option value="">Select product</option>
+        <option value="product1" *ngFor="let data of productData">{{data}}</option>
+      </select>
+    </div>
+  </div>

@@ -1,0 +1,166 @@
+
+<div class="team-activity-container">
+  <!-- Sidebar Navigation -->
+   <app-header [productData]="products"></app-header>
+  <div class="main-content">
+   
+
+    <!-- Team Activity Form -->
+    <div class="content-area">
+      <form [formGroup]="teamActivityForm" (ngSubmit)="onSubmit()">
+        <div class="activity-header">
+          <h3>Team activity</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date:</label>
+              <input 
+                type="date" 
+                id="date" 
+                formControlName="date"
+                class="form-control date-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="workingResources">No of working resource:</label>
+              <input 
+                type="number" 
+                id="workingResources" 
+                formControlName="workingResources"
+                class="form-control number-input"
+                min="1">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tasks Table -->
+        <div class="table-container">
+          <table class="tasks-table">
+            <thead>
+              <tr>
+                <th>S.no</th>
+                <th>Main task</th>
+                <th>Sub task</th>
+                <th>Today task</th>
+                <th>Resource name</th>
+                <th>Phase & Sprint</th>
+                <th>Status</th>
+                <th>Task start - end date range</th>
+                <th>Comments</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody formArrayName="tasks">
+              <tr *ngFor="let task of tasksFormArray.controls; let i = index" [formGroupName]="i">
+                <td>{{ i + 1 }}</td>
+                
+                <td>
+                  <select formControlName="mainTask" class="form-control">
+                    <option value="">select main task</option>
+                    <option *ngFor="let option of mainTaskOptions" [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                </td>
+                
+                <td>
+                  <select formControlName="subTask" class="form-control">
+                    <option value="">select sub task</option>
+                    <option *ngFor="let option of subTaskOptions" [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                </td>
+                
+                <td>
+                  <input 
+                    type="text" 
+                    formControlName="todayTask"
+                    class="form-control"
+                    placeholder="Enter today's task">
+                </td>
+                
+                <td>
+                  <select formControlName="resourceName" class="form-control">
+                    <option value="">Select resource</option>
+                    <option *ngFor="let resource of resourceOptions" [value]="resource">
+                      {{ resource }}
+                    </option>
+                  </select>
+                </td>
+                
+                <td>
+                  <select formControlName="phaseAndSprint" class="form-control">
+                    <option value="">Select</option>
+                    <option *ngFor="let phase of phaseOptions" [value]="phase">
+                      {{ phase }}
+                    </option>
+                  </select>
+                </td>
+                
+                <td>
+                  <select formControlName="status" class="form-control">
+                    <option value="">Select</option>
+                    <option *ngFor="let status of statusOptions" [value]="status">
+                      {{ status }}
+                    </option>
+                  </select>
+                </td>
+                
+                <td>
+                  <div class="date-range">
+                    <input 
+                      type="date" 
+                      formControlName="taskStartDate"
+                      class="form-control date-small">
+                    <span>-</span>
+                    <input 
+                      type="date" 
+                      formControlName="taskEndDate"
+                      class="form-control date-small">
+                  </div>
+                </td>
+                
+                <td>
+                  <input 
+                    type="text" 
+                    formControlName="comments"
+                    class="form-control"
+                    placeholder="Add comments">
+                </td>
+                
+                <td>
+                  <div class="action-buttons">
+                    <button 
+                      type="button" 
+                      class="btn-action btn-add"
+                      (click)="addTaskRow()">
+                      ⊕
+                    </button>
+                    <button 
+                      type="button" 
+                      class="btn-action btn-remove"
+                      (click)="removeTaskRow(i)"
+                      [disabled]="tasksFormArray.length <= 1">
+                      ⊖
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-section">
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="teamActivityForm.invalid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

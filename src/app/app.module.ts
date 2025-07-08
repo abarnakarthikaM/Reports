@@ -1,38 +1,26 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModuleModule } from './core-module/core-module.module';
-import { SharedModuleModule } from './shared-module/shared-module.module';
-import { DatePipe } from '@angular/common';
-import { ConfigService } from './core-module/service/config.service';
-
-export function initializeApp(configService: ConfigService): () => void {
-  return () => configService.loadConfig();
-}
+import { TeamActivityComponent } from './team-activity/team-activity.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    TeamActivityComponent,
+    HeaderComponent,
+    SidebarComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    CoreModuleModule,
-    SharedModuleModule
+    ReactiveFormsModule
   ],
-  providers: [
-    DatePipe,
-    ConfigService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [ConfigService],
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

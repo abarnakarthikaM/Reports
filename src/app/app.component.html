@@ -1,26 +1,11 @@
-<app-theme></app-theme>
-<div class="cls-report">
-    <div class="content"><span style="display: none;">grmDashboard app is running!</span> </div>
-    <div class="container cls-maxwidth">
-        <!-- <nav class="my-4">
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                    aria-controls="nav-home" aria-selected="true" [routerLink]="['/dashboard']" routerLinkActive="active">Home</a>
-                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                    aria-controls="nav-profile" aria-selected="false" [routerLink]="['/pipeline']" routerLinkActive="active">Pipeline</a>
-            </div>
-        </nav> -->
-        <div class="text-right">
-            <app-language [choosenLanguage]="language"></app-language>
-        </div>
-
-        <!-- Common loader start -->
-        <app-common-loader [idVal]=1 *ngIf="loader" loader='5258-loading-2.json' home=true></app-common-loader>
-        <!-- Common loader end -->
 
 
-        <div [@fadeAnimation]="getRouterOutletState(outlet)">
-            <router-outlet #outlet="outlet"></router-outlet>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-sm-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-sm-10">
+
+    <router-outlet></router-outlet>
+  </div>
 </div>
