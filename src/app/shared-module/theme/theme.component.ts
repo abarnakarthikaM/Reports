@@ -1,0 +1,211 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-theme',
+  templateUrl: './theme.component.html',
+  styleUrls: ['./theme.component.scss']
+})
+export class ThemeComponent implements OnInit {
+  // private themeWrapper: any = document.querySelector('html');
+
+  // private productType : string='default';
+  constructor() { 
+    // this.productType=sessionStorage.getItem("themeCode");
+  }
+  // theme = {
+  //   'default': {
+  //     '--PRIMARYCOLOR' : '#f3b02d',
+  //     '--SECONDARYCOLOR' : '#d22636',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#007bff',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'      
+  //   },
+  //   'MH': {
+  //     '--PRIMARYCOLOR' : '#19286e',
+  //     '--SECONDARYCOLOR' : '#19286e',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#007bff',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'      
+  //   },
+  //   'TR': {
+  //     '--PRIMARYCOLOR' : '#000000',
+  //     '--SECONDARYCOLOR' : '#ffe900',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#007bff',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  //   'KM': {
+  //     '--PRIMARYCOLOR' : '#dc0c23',
+  //     '--SECONDARYCOLOR' : '#299147',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#007bff',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  //      'WN': {
+  //     '--PRIMARYCOLOR' : '#324FB0',
+  //     '--SECONDARYCOLOR' : '#FEBE3C',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#286aa4',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  //   'AMAL': {
+  //     '--PRIMARYCOLOR' : '#0261B1',
+  //     '--SECONDARYCOLOR' : '#07b9e9',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#007bcb',   
+  //     '--BGLIGHTER' : '#e6e8e5',
+  //     '--BGDARK' : '#cccccc',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#000000',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#666666',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#E6E6E6',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  //   'CT': {
+  //     '--PRIMARYCOLOR' : '#0075CB',
+  //     '--SECONDARYCOLOR' : '#1E4FA0',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#001764',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#cccccc',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#000000',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#666666',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#E6E6E6',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  //   'RM': {
+  //     '--PRIMARYCOLOR' : '#FFB70D',
+  //     '--SECONDARYCOLOR' : '#286aa4',
+  //     '--DARKBOXSHADOW' : '#0000004d',  
+  //     '--LINK' : '#286aa4',   
+  //     '--BGLIGHTER' : '#f2f5f8',
+  //     '--BGDARK' : '#333333',
+  //     '--BGWHITE' : '#ffffff',
+  //     '--TXTDARK' : '#666666',
+  //     '--TXTDARKER' : '#333333',
+  //     '--TXTBLACK' : '#000000',
+  //     '--TXTLIGHT' : '#8b8f97',
+  //     '--TXTLIGHTER' : '#cccccc',
+  //     '--TXTWHITE' : '#ffffff',  
+  //     '--BDRLIGHTER' : '#efefef',
+  //     '--BDRLIGHT' : '#9e9e9e',
+  //     '--BDRREGULAR':'#cccccc',
+  //     '--PRIMARYREGULARFONT':'OpenSans-Regular',
+  //     '--PRIMARYLIGHTFONT':'OpenSans-Light',
+  //     '--PRIMARYMEDIUMFONT':'OpenSans-Medium',
+  //     '--PRIMARYSEMIBOLDFONT':'OpenSans-SemiBold',
+  //     '--PRIMARYBOLDFONT':'OpenSans-Bold'    
+  //   },
+  // }
+
+  ngOnInit(): void {
+    // const response: Load = await this.service.initAuth();
+    // this.productType=sessionStorage.getItem("themeCode");
+    // console.log(this.productType)
+    // for (const [key, value] of Object.entries(this.theme[this.productType])) {
+    //   this.themeWrapper.style.setProperty(key, value);
+    // }
+  }
+
+}

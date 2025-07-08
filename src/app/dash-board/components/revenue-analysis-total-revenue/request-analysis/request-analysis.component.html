@@ -1,0 +1,16 @@
+
+<div class="cls-dropdown-data dropdown" title="Download">
+    <em type="button" class="icon-15-download cls-download cls-anlalysi-dwnld" id="requestDownload"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></em>
+    <div class="cls-download-drop dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a href="javascript:;" class="dropdown-item" (click)="downloadChart(option.id)"
+            *ngFor="let option of downloadOption" title="{{ option.value }}">{{ option.value }}</a>
+    </div>
+</div>
+
+<div  id="requestAnalysisDivId" *ngIf="!emptyObj" >
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis" [legend]="chartOptions.legend"
+        [fill]="chartOptions.fill" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip" [colors]= "chartOptions.colors"
+        [xaxis]="chartOptions.xaxis" [title]="chartOptions.title"></apx-chart>
+</div>

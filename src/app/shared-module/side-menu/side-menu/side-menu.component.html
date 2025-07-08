@@ -1,0 +1,8 @@
+<ul class="cls-sidemenu-container">
+    <li title="{{ data.menuName | translate }}" [ngClass]="{'cls-active': appService.selectedMenuId === i,'cls-side-menu':!sideMenuKey&&data.menuHeader=='User Action Report','d-none':data.menuHeader=='Queued Reports'}"
+        class="cls-nav" *ngFor="let data of menu; let i = index;"  (click)="selectMenu(data)">
+        <a role="button" id={{data.menuHeader}} class="sideMneu" href="javascript:;">
+            {{ data.menuHeader | translate }}
+        </a>
+    </li>
+</ul>

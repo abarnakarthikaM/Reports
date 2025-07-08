@@ -1,0 +1,47 @@
+/************************************************************************************
+CSS Description : Loader Animations
+*************************************************************************************/
+@mixin loader {
+    .loader {
+        -webkit-animation-duration: 0.85s;
+        animation-duration: 0.85s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolder;
+        animation-name: placeHolder;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        background: darkgray;
+        background: linear-gradient(to right, #eeeeee 10%, #bcbbbb 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+        height: 11px;
+        margin-top: 10px;
+        display: block;
+        &.loader-xs{
+            width:25%;
+        }
+        &.loader-sm{
+            width:50%;
+        }
+        &.loader-lg{
+            width:75%;
+        }
+        &.loader-xl{
+            width:100%;
+        }
+        &.loader-high{
+            height: 30px;
+        }
+    }
+  
+    @keyframes placeHolder {
+        0% {
+            background-position: -468px 0;
+        }
+        100% {
+            background-position: 468px 0;
+        }
+    }
+  }

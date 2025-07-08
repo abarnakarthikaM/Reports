@@ -1,0 +1,37 @@
+<div class="" *ngIf="loader">
+    <app-common-loader [idVal]= 5></app-common-loader>
+</div>
+<img class="cls-reload-icon" *ngIf="reload" title="Reload" src="./../../../../assets/images/icons/icon-1-reload.svg" (click)="reloadItem()" alt=""> 
+<div id="chart" *ngIf="!loader && !reload">
+    <!-- Custom select box start -->
+    <div class="cls-custom-select-box" (click)="openSelectBox();$event.stopPropagation()">
+        {{selectedVal  | titlecase | translate }} <em class="icon-33-chart-sorting cls-select-drop-icon" aria-hidden="true"></em>
+    </div>
+    <ul class="cls-select-box-options" *ngIf="selectbox" (click)="$event.stopPropagation()">
+        <li *ngFor="let option of options" (click)="select(option.val)"> {{option.val  | titlecase | translate }} </li>
+    </ul>
+    <div class="cls-dropdown-data dropdown" title="Download">
+        <em type="button" class="icon-15-download cls-download" id="requestDownload" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"></em>
+        <div class="cls-download-drop dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a href="javascript:;" class="dropdown-item" (click)="downloadChart(option.id)"
+                *ngFor="let option of downloadOption" title="{{ option.value }}">{{ option.value }}</a>
+        </div>
+    </div>
+    <!-- Custom select box end -->
+    <!-- Custom select box start -->
+    <!-- <div class="cls-custom-select-box cls-select" (click)="openSelectBox2();$event.stopPropagation()">
+        {{basedonval}}<em class="fa fa-sort-desc" aria-hidden="true"></em>
+    </div>
+
+    <ul class="cls-select-box-options cls-select" *ngIf="selectboxbaseddon" (click)="$event.stopPropagation()">
+        <li *ngFor="let option of basedOn" (click)="selectBasedon(option.val)"> {{option.val}} </li>
+    </ul> -->
+    <!-- Custom select box end -->
+    <div class="cls-bar-chart" id="requestRevenueAnalyDivId">
+        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions" [responsive]="chartOptions.responsive" [xaxis]="chartOptions.xaxis"
+            [colors]="chartOptions.colors" [legend]="chartOptions.legend" [fill]="chartOptions.fill"
+            [title]="chartOptions.title" [tooltip]="chartOptions.tooltip" [yaxis]="chartOptions.yaxis"></apx-chart>
+    </div>
+</div>

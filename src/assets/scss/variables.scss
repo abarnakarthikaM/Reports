@@ -1,0 +1,44 @@
+$WHITE: #fff;
+$BLACK: #000;
+$SUCCESS:#28a745;
+$LAVENDER:#a6c;
+$INKBLUE:#2703c9;
+$LIGHTBLUE:#09a6f8;
+$WARNING:#e69344;
+$ERROR:#FF0000;
+
+/**
+ * Author: Sudhakar M
+ * Desc: Media query break point
+ */
+//Mobile 
+$mobile-min:290px;
+$mobile-max:480px;
+
+//normal tablet
+$table-min:481px;
+$table-max:767px;
+
+//tablet landscape
+$tablet-land-min:768px;
+$tablet-land-max:1024px;
+
+//ipad and large tablet
+$lg-tablet-min:768px;
+$lg-tablet-max:1024px;
+
+//desktop 
+$desktop-min:1025px;
+$desktop-max:1280px;
+
+//large device
+$large-device:1281px;
+
+
+// STANDARD COLOR INDEPENDENT ON THEME
+// $SUCCESS:rgb(15, 170, 22);
+// $FAILURE:#FFF;
+// $ERROR:#FF0000;
+// #ffffff:#FFF;
+// #ffffff:#111;
+// $WARNING:#FF0000;

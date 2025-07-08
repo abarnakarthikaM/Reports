@@ -1,0 +1,52 @@
+@import '../../../../assets/scss/variables.scss';
+.cls-autoComplete-container {
+    .cls-auto-complete-dropdown {
+        .cls-autoComp-input {
+            position: relative;
+            z-index: 1;
+            padding-right: 25px !important;
+        }
+        .cls-dropdown-icon {
+            position: absolute;
+            top: 15px;
+            right: 3px;
+            cursor: pointer;
+            font-size: 9px;
+        }
+        .cls-auto-select {
+            font-size: 13px;
+            text-transform: capitalize;
+            .cls-mandatory {
+                color: $ERROR;
+            }
+        }
+    }
+}
+.cls-border-error{
+    .input-field{
+        input{
+            border-bottom: 1px solid red;
+        }
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),
+(min-width:$table-min) and (max-width:$table-max) {
+    .cls-dropdDown-container {
+        margin-bottom: 0px;
+        .input-field {
+            input {
+                font-size: 14px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .cls-custom-select {
+        width: 100%;
+    }
+  }
+  @media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-custom-select {
+        max-width: 50%;
+        flex: unset;
+    }
+}

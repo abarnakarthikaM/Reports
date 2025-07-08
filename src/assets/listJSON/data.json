@@ -1,0 +1,389 @@
+{
+  "tagName": "mjml",
+  "children": [
+    {
+      "tagName": "mj-head",
+      "attributes": {},
+      "children": [
+        {
+          "tagName": "mj-title",
+          "content": "ZG5kZS1lZGl0b3I="
+        },
+        {
+          "tagName": "mj-style",
+          "content": "YXt0ZXh0LWRlY29yYXRpb246bm9uZSFpbXBvcnRhbnR9CgouYm9keSB7fSA="
+        },
+        {
+          "tagName": "mj-attributes",
+          "children": [
+            {
+              "tagName": "mj-text",
+              "attributes": {
+                "font-family": "Ubuntu,Andada Pro,DM Sans,Festive,Fira Sans,Georama,IM Fell English SC,Inter,Lato,Lora,Merriweather,Montserrat,Noto Sans,Noto Sans Mono,Nunito,Nunito Sans,Open Sans,Oswald,PT Sans,Playfair Display,Poppins,Quicksand,Raleway,Roboto,Roboto Condensed,Roboto Mono,Roboto Slab,Scheherazade New,Source Sans Pro,Ubuntu,Work Sans"
+              }
+            }
+          ]
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Roboto",
+            "href": "https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Festive",
+            "href": "https://fonts.googleapis.com/css2?family=Festive&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Noto Sans Mono",
+            "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Open Sans",
+            "href": "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Andada Pro",
+            "href": "https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Lato",
+            "href": "https://fonts.googleapis.com/css2?family=Lato&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Scheherazade New",
+            "href": "https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Montserrat",
+            "href": "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Roboto Condensed",
+            "href": "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Source Sans Pro",
+            "href": "https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Poppins",
+            "href": "https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Oswald",
+            "href": "https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Noto Sans",
+            "href": "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Georama",
+            "href": "https://fonts.googleapis.com/css2?family=Georama&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Roboto Mono",
+            "href": "https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Raleway",
+            "href": "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Nunito",
+            "href": "https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Roboto Slab",
+            "href": "https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "PT Sans",
+            "href": "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Merriweather",
+            "href": "https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Playfair Display",
+            "href": "https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Lora",
+            "href": "https://fonts.googleapis.com/css2?family=Lora&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "IM Fell English SC",
+            "href": "https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Inter",
+            "href": "https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Nunito Sans",
+            "href": "https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Work Sans",
+            "href": "https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Quicksand",
+            "href": "https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Fira Sans",
+            "href": "https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "Ubuntu",
+            "href": "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+          }
+        },
+        {
+          "tagName": "mj-font",
+          "attributes": {
+            "name": "DM Sans",
+            "href": "https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+          }
+        }
+      ]
+    },
+    {
+      "tagName": "mj-body",
+      "attributes": {
+        "css-class": "mjml-tag body identifier-mj-body",
+        "background-color": "#F1F1F1",
+        "width": "600px"
+      },
+      "children": [
+        {
+          "tagName": "mj-section",
+          "attributes": {
+            "align": "center",
+            "background-color": "#fff",
+            "border": "none",
+            "border-radius": "0px",
+            "color": "#ffffff",
+            "font-family": "Ubuntu, Helvetica, Arial, sans-serif",
+            "font-size": "13px",
+            "font-weight": "normal",
+            "inner-padding": "10px 25px",
+            "line-height": "120%",
+            "padding": "10px 25px",
+            "target": "_blank",
+            "text-align": "center",
+            "text-decoration": "none",
+            "text-transform": "none",
+            "vertical-align": "middle",
+            "css-class": " mjml-tag  identifier-mj-section-5"
+          },
+          "children": [
+            {
+              "tagName": "mj-column",
+              "attributes": {
+                "css-class": " mjml-tag  identifier-mj-column-4",
+                "padding": "0px 0px"
+              },
+              "children": [
+                {
+                  "tagName": "mj-text",
+                  "attributes": {
+                    "color": "#000000",
+                    "font-size": "13px",
+                    "line-height": "1",
+                    "letter-spacing": "none",
+                    "align": "left",
+                    "padding": "10px 25px",
+                    "padding-left": "0px",
+                    "padding-right": "0px",
+                    "css-class": " mjml-tag  identifier-mj-text-6"
+                  },
+                  "content": "TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcy4=",
+                  "mutableProperties": [
+                    "color",
+                    "font-family",
+                    "font-size",
+                    "font-style",
+                    "font-weight",
+                    "line-height",
+                    "letter-spacing",
+                    "height",
+                    "text-decoration",
+                    "text-transform",
+                    "align",
+                    "container-background-color",
+                    "padding",
+                    "padding-top",
+                    "padding-bottom",
+                    "padding-left",
+                    "padding-right",
+                    "css-class"
+                  ],
+                  "mutalbePropertiesWithDefaultValues": {
+                    "color": "#000000",
+                    "font-family": "Ubuntu, Helvetica, Arial, sans-serif",
+                    "font-size": "13px",
+                    "font-style": "",
+                    "font-weight": "",
+                    "line-height": "1",
+                    "letter-spacing": "none",
+                    "height": "",
+                    "text-decoration": "",
+                    "text-transform": "",
+                    "align": "left",
+                    "container-background-color": "",
+                    "padding": "10px 25px",
+                    "padding-top": "",
+                    "padding-bottom": "",
+                    "padding-left": "",
+                    "padding-right": "",
+                    "css-class": ""
+                  }
+                }
+              ],
+              "mutableProperties": [
+                "background-color",
+                "inner-background-color",
+                "border",
+                "border-bottom",
+                "border-left",
+                "border-right",
+                "border-top",
+                "border-radius",
+                "inner-border",
+                "inner-border-bottom",
+                "inner-border-left",
+                "inner-border-right",
+                "inner-border-top",
+                "inner-border-radius",
+                "width",
+                "vertical-align",
+                "padding",
+                "padding-top",
+                "padding-bottom",
+                "padding-left",
+                "padding-right",
+                "css-class"
+              ]
+            }
+          ],
+          "cannot_have": ["mj-section", "mj-column"],
+          "mutableProperties": [
+            "background-color",
+            "background-position",
+            "background-position-x",
+            "background-position-y",
+            "background-repeat",
+            "background-size",
+            "background-url",
+            "border",
+            "border-bottom",
+            "border-left",
+            "border-radius",
+            "border-right",
+            "border-top",
+            "css-class",
+            "direction",
+            "full-width",
+            "padding",
+            "padding-bottom",
+            "padding-left",
+            "padding-right",
+            "padding-top",
+            "text-align"
+          ]
+        }
+      ],
+      "mutableProperties": ["width", "background-color"]
+    }
+  ],
+  "attributes": {}
+}

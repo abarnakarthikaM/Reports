@@ -1,0 +1,30 @@
+<div *ngIf="loader">
+    <app-common-loader [idVal]= 1></app-common-loader>
+</div>
+<img class="cls-reload-icon" *ngIf="reload" title="Reload" src="./../../../../assets/images/icons/icon-1-reload.svg" (click)="reloadItem()" alt="">
+<div id="chart" *ngIf="!loader && !reload">
+       
+        <!-- Custom select box start -->
+        <div class="cls-custom-select-box" (click)="openSelectBox();$event.stopPropagation()">
+            {{ showVal | titlecase | translate }} <em class="icon-33-chart-sorting cls-select-drop-icon" aria-hidden="true"></em>
+        </div>
+        <ul class="cls-select-box-options" *ngIf="selectbox" (click)="$event.stopPropagation()">
+            <li *ngFor="let option of options" (click)="select(option.val)" > {{option.info  | titlecase | translate }} </li>
+        </ul>
+        <div class="cls-dropdown-data dropdown" title="Download">
+            <em type="button" class="icon-15-download cls-download" id="requestDownload" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></em>
+            <div class="cls-download-drop dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="javascript:;" class="dropdown-item" (click)="downloadChart(option.id)"
+                    *ngFor="let option of downloadOption" title="{{ option.value }}">{{ option.value }}</a>
+            </div>
+        </div>
+        <!-- Custom select box end -->
+
+        <div class="cls-bar-chart" id="requestDivId">
+            <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [yaxis]="chartOptions.yaxis"
+                [xaxis]="chartOptions.xaxis" [labels]="chartOptions.labels" [stroke]="chartOptions.stroke"
+                [colors]="chartOptions.colors" [plotOptions]="chartOptions.plotOptions" [markers]="chartOptions.markers"
+                [fill]="chartOptions.fill" [tooltip]="chartOptions.tooltip" [title]="chartOptions.title"></apx-chart>
+        </div>
+</div>

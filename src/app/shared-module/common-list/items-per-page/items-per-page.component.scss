@@ -1,0 +1,129 @@
+@import '../../../../assets/scss/variables.scss';
+.cls-itemsPerPage{
+    display: flex;
+    align-items: center;
+	margin: 30px 0;
+
+	
+    .cls-month-select{
+        margin: 0 10px;
+		position: relative;
+		.cls-custom-select{
+			min-width: 50px;
+			max-width: 50px;
+			text-align: center;
+			// min-width: 80px;
+			// max-width: 80px;
+			border-radius: 35px;
+			padding: 4px 5px 0px;
+			font-size: 14px;
+			cursor: pointer;
+			min-height: 33px;
+			overflow: hidden;
+			text-overflow: ellipsis;	
+			background: var(--BGWHITE);
+    		color: var(--PRIMARYCOLOR);
+			border: 1px solid #e6e6e6;
+			box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.2);
+			
+            .cls-filter-months{
+                max-width: 90px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+				font-size: 15px;
+				@media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+					font-size: 12px;
+				}
+				@media screen and (min-width:$table-min) and (max-width:$table-max) {
+					font-size: 13px;
+				}
+                em{
+					position: absolute;
+					top: 6px;
+					right: 14px;
+					background: var(--BGWHITE);
+					color: var(--BTNBG);
+					padding: 5px;
+					font-size: 12px;
+					color:  var(--ICON);
+					font-weight: 900;
+                }
+            }
+		}
+		.cls-custom-select-box{
+			position: absolute;
+			padding: 5px 10px;
+			min-width: 80px;
+			background: var(--BGWHITE);
+			border: 1px solid var(--BORDERDARKER);
+			border-radius: 10px;
+			top: 0px;
+			left: 0px;
+            box-shadow: 5px 10px 5px rgba(0,0,0,0.3);
+			z-index: 1;
+			max-height: 115px;
+			overflow: hidden;
+			overflow-y: scroll;
+			.cls-select-item{
+				padding:3px 5px;
+				display: block;
+				color: var(--TEXTDARK);
+				font-size: 14px;
+				cursor: pointer;
+				em{
+                    padding-right: 5px;
+                    vertical-align: -1px;
+                    }
+			}
+		}
+	}
+	.cls-label{
+		color: var(--TEXTDARK);
+		font-size: 15px;
+	}
+	&.cls-displayingShow
+	{
+		position: absolute;
+		top: -24px;
+		z-index: 1;
+	}
+	@media screen and (min-width:$mobile-min) and (max-width:$mobile-max) {
+		justify-content: center;
+		margin: 25px 0;
+		margin: unset;
+    	position: relative;
+    	right: 100px;
+    	bottom: 7px;
+		visibility: hidden;
+		.cls-month-select {
+			.cls-custom-select-box {
+				z-index: 10;
+			}
+		}
+		.cls-label{
+			font-size: 12px;
+		}
+		.cls-displaying {
+			display: none;
+		}
+		.cls-displayingShow {
+			position: absolute;
+			top: 13px;
+			z-index: 1;
+			left: 0px;
+		}
+	}
+	@media screen and (min-width:$table-min) and (max-width:$table-max) {
+			position: relative;
+			bottom: 19px;
+			left: 6px;
+			display: none;
+	}
+	@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+	.cls-label{
+		font-size: 13px;
+	}
+}
+	
+}

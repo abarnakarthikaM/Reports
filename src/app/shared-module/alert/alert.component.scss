@@ -1,0 +1,372 @@
+/************************************************************************************
+CSS Description : Common Modal Design
+Author          : Naveen.s
+Created Date    : 4 april 2020
+*************************************************************************************/
+@import '../../../assets/scss/variables.scss';
+//popup animation design Bounce-In Animation
+@keyframes fadeIn-popup {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+//Modal background
+.cls-background{
+  position:fixed;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  background:var(--TXTBLACK);
+  opacity:.5;
+  // pointer-events: none;
+  z-index:1000;
+}
+//Modal container
+.cls-popup{
+  animation: 1s fadeIn-popup linear;
+  animation-fill-mode: forwards;
+  transition:.5s;
+  margin: 0px auto;
+  padding-bottom: 30px;
+  width: 36%;
+  position: fixed;
+  z-index: 1001;
+  background: var(--white);
+  top: 30%;
+  left: 0;
+  right: 0;
+  // overflow: hidden;
+  border-radius:8px;
+  textarea{
+    margin-top: 7px;
+    min-height: unset;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    width:100%;
+    padding:10px;
+  }
+  .cls-error{
+    border:1px solid $ERROR;
+  }
+  .cls-mandatory{
+    color:$ERROR;
+  }
+  .cls-reason{
+    display: block;
+    font-size: 14px !important;
+    text-align: left;
+    margin-top:15px;
+  }
+  .cls-footer{
+    position: absolute;
+      bottom: 0px;
+      left: 0;
+      background: #e6e6e6;
+      width: 100%;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      margin-top: 8px;
+      padding: 15px 20px;
+  }
+  .cls-feathericon{
+    color: $ERROR;
+    width: 100px;
+    height: 39px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+  }
+  //Modal Header
+  // .cls-head{    
+  //   padding: 12px 12px 10px 26px;
+  //   border-bottom: 1px solid var(--dark);
+  //   background: var(--primary);
+  //   span{
+  //     font:20px "PoppinsRegular";
+  //     color:var(--dark);
+  //   }
+  //   em{      
+  //     float: right;
+  //     padding: 3px 3px 8px 5px;
+  //     font-size: 10px;
+  //     color: var(--light);
+  //   }
+  // }
+  //Modal Icon
+  .cls-icon{
+    width:30px;
+    margin:0px auto;
+  }
+  //common message design
+  .cls-mgs{
+    font-size:14px;
+    color:var(--light);
+    &.cls-clr-blk{
+      color:var(--dark) !important;
+    }
+  }
+  //button design
+  .cls-custombtn{
+    height:30px !important;
+    span{
+      font-size: 14px;
+      em{
+        font-size: 12px;
+        top: 31%;
+        right: 10%;
+        padding: 0;
+      }
+    }
+    // &.btn-white{
+    //   em{
+    //     display:none;
+    //   }
+    //   span{
+    //     &::before{
+    //       content: "\e906";
+    //       font-family: 'inficon';
+    //       transition: rotate(180deg);
+    //     }
+    //   }
+    // }
+  }
+  .cls-top-close{
+    cursor: pointer;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: $ERROR;
+    display: inline-block;
+    right: -6px;
+    top: -6px;
+    border-radius: 4px;
+    color: var(--TXTWHITE);
+    text-align: center;
+    padding: 2px;
+    border: 1px solid #ffffff;
+    em{
+      font-size: 9px;
+      color: var(--TXTWHITE);
+      vertical-align: text-top;
+      font-weight: 600;
+    }
+    &:hover{
+      box-shadow:0 2px 10px 0  rgba(0, 0, 0, 0.1);
+      transform: scale(1.1);
+    }
+  }
+  .cls-alert-icon{
+    em{
+      display: block;
+      margin: 0 auto;
+      font-size: 40px;
+      padding: 10px;
+    }
+    // .cls-question{
+    //  color: $SUCCESS;
+    // }
+    // .cls-alert{
+    //   color: $ERROR;
+    // }
+    // .cls-warning{
+    //   color: $WARNING;
+    // }
+    // .cls-tick{
+    //   background: $SUCCESS;
+    //   color: var(--white);
+    //   font-size: 14px;
+    //   width: 10%;
+    //   border-radius: 100%;
+    //   margin-bottom: 10px;
+    // }
+  }
+  .cls-btns{
+    margin: 30px 0px 35px 0px;
+    .cls-custom-btn{
+      span{
+        font: unset;
+      }
+    }
+    .cls-btn-secondary{
+      padding: 7px 25px !important;
+    }
+  }
+  .cls-content{
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 350px;
+    text-align: center;
+    span{
+      font-size:19px;
+    }
+    // text-transform:capitalize
+  }
+  .cls-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+}
+:host(.cls-alert){
+  .cls-close{
+      display: none !important;
+  }
+}
+//animation design for closeing modal
+.close-ani{
+  display:block;
+  animation: .5s fadeout;
+  animation-fill-mode: forwards;
+  transition:.5s;
+  .cls-background{
+    display: none;
+  }
+}
+.cls-submit{
+  background: var(--PRIMARYCOLOR);
+  color: var(--TXTWHITE);
+  padding: 0px 25px;
+  font-size: 16px;
+  box-shadow: unset;
+  transition: 0.5s;
+  &:hover{
+      // box-shadow: 0px 4px 10px 1px #EDF1F6
+      box-shadow: inset 10em 0 0 0 var(--TXTWHITE);
+      color: var(--PRIMARYCOLOR);
+  }
+}
+.cls-secondary{
+  background: var(--BGWHITE);
+  color: var(--PRIMARYCOLOR);
+  padding: 0px 25px;
+  font-size: 16px;
+  box-shadow: unset;
+  transition: 0.5s;
+  margin-right: 15px;
+}
+@keyframes fadeout {
+  0% {
+    transform: scale(1);
+    transform: scale(1) translate3d(0,0,0);
+  }
+  5%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  transform: scale(0) translate3d(0,0,0);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cls-alert-container{
+    .cls-popup{
+      width: 80%;
+      .cls-content{
+        min-width:unset;
+        width: 100%;
+        span
+        {
+          font-size: 15px !important;
+          padding: 0 !important;
+          // display: inline-block;
+          margin: 0 !important;
+        }
+      } 
+      .cls-btns{
+        .cls-btn-primary,.cls-btn-secondary{
+          padding: 7px 15px !important;
+        }
+      }
+      .cls-footer{
+        padding: 10px 20px;
+      }
+      textarea{
+        width:100%;
+        float: left;
+        margin-bottom: 44px;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 766px){
+  .cls-alert-container{
+    .cls-popup{
+      width: 80%;
+      top: 10%;
+      .cls-content{
+        min-width:unset;
+        width: 100%;
+        span
+        {
+          font-size: 15px;
+          padding: 0 !important;
+          // display: inline-block;
+          margin: 0 !important;
+        }
+      } 
+      .cls-btns{
+        .cls-btn-primary,.cls-btn-secondary{
+          padding: 7px 15px !important;
+        }
+      }
+      .cls-footer{
+        padding: 10px 20px;
+      }
+      textarea{
+        width:100%;
+        float: left;
+        margin-bottom: 34px;
+        padding: 5px;
+      }
+    }
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px){
+  .cls-popup{
+    min-width: 66%;
+    // top: 10%;
+    .cls-custom-btn.cls-btn-primary{
+      padding: 7px 25px !important;
+    }
+    textarea{
+      padding: 5px;
+    }
+  }
+}

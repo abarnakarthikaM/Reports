@@ -1,0 +1,37 @@
+@import '../../../../assets/scss/variables.scss';
+.cls-date{
+    position: relative;
+    .cls-date-icon{
+      position: absolute;
+      right: -4px;
+      top: 20px;
+      color: var(--PRIMARYCOLOR);
+      cursor: pointer;
+    }
+    .cls-mandatory {
+        color: $ERROR;
+    }
+  }
+  @media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max) {
+    .cls-datePicker-container {
+      margin-bottom: 0px;
+      .input-field {
+        input {
+          font-size: 14px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .cls-date {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-datePicker-container {
+      margin-bottom: 0px;
+    }
+    .cls-date {
+        max-width: 50%;
+        flex: unset;
+    }
+}

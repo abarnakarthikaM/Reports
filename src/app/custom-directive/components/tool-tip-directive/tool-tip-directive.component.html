@@ -1,0 +1,8 @@
+<div class="cls-tooltip {{position}}" [style.left]="left + 'px'" [style.top]="top + 'px'">
+    {{data}}
+    <dl *ngIf="data2">
+        <ng-container *ngFor="let list of data2">
+            <dt> <span>{{list.label}}</span> : {{list.value}}</dt>
+        </ng-container>
+    </dl>
+</div>

@@ -1,0 +1,8 @@
+<div class="row" [formGroup]="form">
+    <div class="cls-date input-field col-md-4" *ngFor="let data of formData">
+        <input class="form-control date" [ngClass]="{'cls-border-error':(submitted && form.controls[data.keys].errors)}" tabindex="0" type="text" id="{{ data.keys }}" onkeypress="return false;" autocomplete="off" formControlName="{{ data.keys }}"  (keydown.enter)="chooseDate(data.keys)"  (click)="chooseDate(data.keys)"
+        [ngClass]="{'cls-border-error':(submitted && form.controls[data.keys].errors)}" required>
+        <label class="position-label" for="{{ data.keys }}">{{ data.name | translate }}<span class="cls-mandatory">*</span></label>
+        <em class="icon-4-date cls-date-icon" (click)="chooseDate(data.keys)"></em>
+    </div>
+</div>

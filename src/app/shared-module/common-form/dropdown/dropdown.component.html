@@ -1,0 +1,13 @@
+<div class="row cls-dropdDown-container" [formGroup]="form"
+    [ngClass]="{'cls-border-error':(submitted && form.controls[dropDownData?.keys].errors) && dropDownData?.keys != appService.childCondition , 'cls-child':appService.childConditionInfo.selectedInfo == undefined && appService.childConditionInfo.count < 2 && dropDownData?.name=='Sub Category'}">
+    <div title="Please fill out this field." (mouseover)="handleChildConditionData()" (click)="onClickEvent()" class="input-field col-md-4 cls-custom-select">
+        <label class="position-label" for="{{ dropDownData?.keys }}"
+            [ngClass]="{'cls-active-label': form?.controls[dropDownData?.keys]?.valid }">{{ dropDownData?.name |
+            translate }}<span class="cls-mandatory">*</span></label>
+        <select (change)="onChangeEvent($event)" formControlName="{{ dropDownData?.keys }}">
+            <option *ngFor="let item of dropDownValue" value="{{item.id}}">{{ item.value ? item.value : item.id }}
+            </option>
+        </select>
+    </div>
+</div>
+<!-- (mouseover)="handleChildConditionData()"  -->

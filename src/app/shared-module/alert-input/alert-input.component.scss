@@ -1,0 +1,99 @@
+@import '../../../assets/scss/variables.scss';
+
+.cls-alert-conatiner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    .cls-bg {
+        background: #00000059;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 998;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .cls-model {
+        background-color: unset;
+        max-height: none;
+        display: block;
+        z-index: 999;
+        width: 37%;
+        height: auto;
+        margin: 0 auto;
+        top: 50px;
+        box-shadow: none;
+
+        .cls-form {
+            .cls-save {
+                text-align: center;
+            }
+        }
+        .input-field{
+            .cls-err{
+                color: $ERROR;
+            }
+        }
+        .cls-defaultIP{
+            .position-label{
+                top: 0px !important;
+                &.active{
+                    top: -5px !important;
+                }
+            }
+            
+        }
+        .cls-queue-report-text {
+            text-align: center;
+            color: $ERROR;
+            margin-top: 10px;
+        }
+        .cls-tittle {
+            font-family: var(--SECONDARYFONT);
+        }
+    }
+    
+}
+.btn-secondary{
+    background: var(--PRIMARYCOLOR);
+    color: var(--TXTWHITE);
+    padding: 5px 25px;
+    font-size: 16px;
+    box-shadow: unset;
+    transition: 0.5s;
+    // background: #19286e !important;
+    &:hover{
+        box-shadow: inset 10em 0 0 0 var(--TXTWHITE);
+        color: var(--PRIMARYCOLOR);
+    }
+}
+.cls-mandatory{
+    color: #FF0000;
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max){
+    .cls-custom-input.cls-defaultIP{
+        margin-bottom: 0px !important;
+    }
+    .modal .modal-content{
+        padding: 10px !important;
+    }
+    .cls-alert-conatiner{
+        .cls-model{
+            width: 90%;
+            top: 180px;
+            right: 10px;
+      }
+    }
+    .cls-custom-input.cls-defaultIP input{
+        height: 25px;
+    }
+   
+}

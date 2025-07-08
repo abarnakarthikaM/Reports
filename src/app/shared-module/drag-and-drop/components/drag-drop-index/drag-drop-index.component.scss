@@ -1,0 +1,85 @@
+@import '../../../../../assets/scss/variables.scss';
+
+.cls-field-list {
+    background: #f4f4fa;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: var(--SECONDARYFONT);
+    .cls-inner-head {
+        display: inline-block;
+        color: #000;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .cls-report-content {
+        .cls-drag-content {
+            width: 100%;
+            border: 1px solid var(--bordercolor);
+            // background: var(--navbarcolor);
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: grabbing;
+            font-family: var(--PRIMARYMEDIUMFONT);
+            &.drag-transition {
+                cursor: grabbing !important;
+            }
+
+            .cls-sixdot {
+                position: relative;
+                top: 2px;
+                margin-right: 5px;
+
+                &::before {
+                    content: ". .";
+                    color: var(--BORDERDARKER);
+                    position: absolute;
+                    left: 0;
+                    top: -10px;
+                }
+
+                &::after {
+                    content: ". .";
+                    color: var(--BORDERDARKER);
+                    position: absolute;
+                    left: 0;
+                    top: -6px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max) {
+    .cls-field-list {
+        padding: 10px;
+
+        .cls-report-content {
+            .cls-drag-content {
+                margin: 5px 0;
+            }
+        }
+
+        .cls-inner-head {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (min-width:$table-min) and (max-width:$table-max) {
+    .cls-field-list {
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-report-content {
+        .cls-drag-cont {
+            display: inline-block;
+            max-width: 48%;
+            flex: unset;
+        }
+    }
+}

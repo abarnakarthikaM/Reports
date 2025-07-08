@@ -1,0 +1,6 @@
+<div class="cls-jump-page" *ngIf="noOfPage != 1">
+    <label class="cls-label" for="jumptopage"> Go to page </label>
+    <input class="cls-input" name="" id="jumptopage" [ngClass]="{'alert alert-danger':!jumpVal}" [formControl]="name">
+    <button type="button" name="" id="" class="cls-jumb-page-btn" (click)="jumpPage()"> Go
+        <em class="icon-14-arrow-right"></em> </button>
+</div>

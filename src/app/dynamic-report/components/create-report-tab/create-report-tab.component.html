@@ -1,0 +1,72 @@
+<div class="cls-edit-body" *ngIf="allFieldsConditions && appService.viewReports">
+    <div class="cls-report-tab-condition">
+        <ul class="nav cls-custom-tab">
+
+            <li *ngFor="let tabmenu of tabList;let i = index;">
+                <a id="tab{{tabmenu.key}}"
+                [ngClass]="{'active' : i===0 ||(tabId && tabId == tabmenu.key ), 'disabled' : handelTabRestriction(tabList[i].key) || (tabId && tabId != tabmenu.key) }"
+                 (click)="handelTabClick(tabmenu.key)"
+                data-toggle="tab" href="#{{tabmenu.key}}">
+                    <span class="cls-list-count">{{i+1}}</span> {{tabmenu.name}}
+                </a>
+                <!-- [attr.tabindex]="handelTabRestriction(tabList[i].key) ?1:-1" -->
+            </li>   
+        </ul>
+    </div>
+    
+    <div class="tab-content">
+
+        <ng-container *ngFor="let tabdata of tabList;let i = index;">
+            <div id="{{tabdata.key}}" class="tab-pane" [ngClass]="{'active show':i===0}">
+                <div [ngSwitch]="tabdata.key">
+                    <!-- Available fields tab section -->
+                    <div *ngSwitchCase="'availableFields'">
+                        <app-radio *ngIf="isSubMenu && !appService.isEditReport" [groupData]="activeModuleData.submenu"
+                            (radioStatus)="radioStatus($event)"></app-radio>
+                        <ng-container *ngFor="let data of allFieldsConditions?.response?.data?.fields;let i=index">
+                            <app-checkbox *ngIf="data.type=='checkbox'" [groupData]="data"
+                                (finalArray)="getFieldsCondition($event)"> </app-checkbox>
+                        </ng-container>
+                    </div>
+
+                    <!-- Available condition tab section -->
+                    <div *ngSwitchCase="'availableConditions'">
+                        <app-radio *ngIf="!appService.isFieldData && isSubMenu && !appService.isEditReport" [groupData]="activeModuleData.submenu"
+                        (radioStatus)="radioStatus($event)"></app-radio>
+                        <app-checkbox [groupData]="allFieldsConditions?.response?.data?.conditions"
+                            (finalArray)="getavailableCondition($event)"> </app-checkbox>
+                    </div>
+
+                     <!-- Review and save save page section -->
+                    <div *ngSwitchCase="'reviewSave'">
+                        <ng-container *ngIf="flagReviewFlow">
+                            <app-save-preview-tab [activeModuleData]="activeModuleData"
+                                [selectedFields]="selectedFieldData"
+                                [selectedCondition]="allFieldsConditions.response.data.conditions"
+                                [editConditionData]="availableCondition"
+                                [savedListFlag]="savedListFlag"
+                                (redirect)="handleRedirect($event)"></app-save-preview-tab>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="text-center cls-btn-prc" *ngIf="tabList[i+1]">
+                    <a id="tabList[i+1].key" tabindex="0" type="button"  (keydown.enter)="handelTabClick(tabList[i+1].key)" class="btn cls-proceed"
+                    (click)="handelTabClick(tabList[i+1].key)"
+                        [ngClass]="{'disabled' : handelTabRestriction(tabList[i+1].key)}"
+                       >
+                        {{'Proceed'}}
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+<ng-container *ngIf="allFieldsConditions && !appService.viewReports">
+    <app-save-preview-tab [activeModuleData]="activeModuleData"
+        [selectedFields]="selectedFieldData"
+        [selectedCondition]="allFieldsConditions.response.data.conditions"
+        [editConditionData]="availableCondition"
+        [savedListFlag]="savedListFlag"
+        (redirect)="handleRedirect($event)"></app-save-preview-tab>
+</ng-container>

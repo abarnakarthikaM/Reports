@@ -1,0 +1,21 @@
+<div class="cls-field-list">
+    <div class="mb-4" *ngFor="let item of dragAndDropField; let index = index">
+        <ng-container *ngIf="fieldList[index]>0 && item.type!='radio'">
+            <span class="cls-inner-head d-block" tabindex="0">{{item.head }}</span>
+            <div class="row cls-report-content example-list">
+                <ng-container *ngFor="let row of item['field_details']; let i = index">
+                    <div class=" cls-drag-cont col-md-4" *ngIf="row?.status == 'Y'">
+                        <div class="cls-drag-content"  draggable="true" [id]="i" (touchstart)="touchStart($event, i)"
+                            (touchmove)="touchMove($event, i, index, item.head)" (touchend)="touchEnd($event, i)"
+                            (dragstart)="dragStart($event, i,item.head)" (dragend)="dragEnd($event, i)"
+                            (dragenter)="dragEnter($event, i,index, item.head)" (drop)="drop($event, i)">
+                            <em class="cls-sixdot" tabindex="-1">. .</em>
+                            <span tabindex="0">{{row.name }}</span>
+                        </div>
+                    </div> 
+                </ng-container>
+            </div>
+        </ng-container>
+        
+    </div>
+</div>

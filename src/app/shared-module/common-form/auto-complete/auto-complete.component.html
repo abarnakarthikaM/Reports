@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+  <div class="row cls-autoComplete-container">
+    <div
+      class="input-field cls-auto-complete col-md-4"
+      *ngFor="let data of formData"
+    >
+      <input
+        class="form-control"
+        appBlockCopyPaste
+        required
+        type="text"
+        id="{{ data.keys }}"
+        autocomplete="off"
+        formControlName="{{ data.keys }}"
+        (blur)="onBlur(data.keys,data.type)"
+        (keypress)="stringValidation($event,data.keys,data.type)"
+        (keydown)="dropdownFocus($event,data.keys, this)"
+        [ngClass]="{'cls-border-error':(submitted && form.controls[data.keys].errors)}"
+        (keyup)="
+          citySearch(
+            data.keys,
+            data.reportName,
+            data.basedOn
+          )
+        "
+      />
+      <label class="position-label" for="{{ data.keys }}"
+        >{{ data.name }}<span class="cls-mandatory">*</span></label
+      >
+    </div>
+  </div>
+</form>

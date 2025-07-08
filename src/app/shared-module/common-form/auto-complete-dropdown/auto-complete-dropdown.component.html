@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+    <div class="row cls-autoComplete-container">
+        <div class="input-field cls-auto-complete-dropdown col-md-4" *ngFor="let data of formData">
+            <input class="form-control cls-autoComp-input" (click)="resetInput(data.keys)"
+                (mouseover)="handleChildConditionData(data.keys)" value={{autoCompDrpDwnData}}
+                [ngClass]="{'cls-border-error':(submitted && form.controls[data.keys].errors)}" id="{{data.keys}}"
+                formControlName="{{data.keys}}" required type="text" />
+            <span class="cls-dropdown-icon"><em class="icon-14-arrow"></em></span>
+            <label class="position-label cls-auto-select" for="{{data.keys}}">{{data.name}}<span
+                    class="cls-mandatory">*</span></label>
+        </div>
+    </div>
+</form>
+<!-- [(ngModel)]=autoCompDrpDwnData -->

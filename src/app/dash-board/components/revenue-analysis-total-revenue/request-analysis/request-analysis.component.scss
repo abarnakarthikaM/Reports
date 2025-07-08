@@ -1,0 +1,15 @@
+@import '../../../../../assets/scss/variables.scss';
+
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max) {
+    .cls-custom-select-box {
+        top: 31px !important;
+        right: 45px !important;
+        min-width: 100px !important;
+        // max-height: 118px !important;
+        padding:0px 6px !important;
+        .cls-select-drop-icon {
+            right: 13px;
+            top: 9px;
+        }
+    }
+}

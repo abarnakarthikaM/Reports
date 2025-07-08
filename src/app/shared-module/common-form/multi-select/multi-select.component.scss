@@ -1,0 +1,29 @@
+@import '../../../../assets/scss/variables.scss';
+.cls-custom-multiselect{
+    .cls-mandatory {
+        color: $ERROR;
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max) {
+    .cls-custom-multiselect {
+        width: 100%;
+    }
+    .cls-multiSelect-container {
+        margin-bottom: 0px;
+        .input-field {
+            input.select-dropdown {
+                margin-bottom: 0px;
+                font-size: 14px !important;
+            }
+        }
+    }
+  }
+  @media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-multiSelect-container {
+        margin-bottom: 0px;
+    }
+    .cls-custom-multiselect {
+        max-width: 50%;
+        flex: unset;
+    }
+}

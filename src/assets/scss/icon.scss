@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "inficon";
+  src: url("./assets/fonts/icons/inficon.eot?p0rba7");
+  src: url("./assets/fonts/icons/inficon.eot?p0rba7#iefix") format("embedded-opentype"),
+    url("./assets/fonts/icons/inficon.ttf?p0rba7") format("truetype"),
+    url("./assets/fonts/icons/inficon.woff?p0rba7") format("woff"),
+    url("./assets/fonts/icons/inficon.svg?p0rba7#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "inficon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-1-reload:before {
+  content: "\e900";
+}
+.icon-2-checkbox-off:before {
+  content: "\e901";
+}
+.icon-3-checkbox-on:before {
+  content: "\e902";
+}
+.icon-4-date:before {
+  content: "\e903";
+}
+.icon-5-delete:before {
+  content: "\e904";
+}
+.icon-6-history:before {
+  content: "\e905";
+}
+.icon-7-edit:before {
+  content: "\e906";
+}
+.icon-8-expand:before {
+  content: "\e907";
+}
+.icon-9-plus:before {
+  content: "\e908";
+}
+.icon-10-info:before {
+  content: "\e909";
+}
+.icon-11-expand:before {
+  content: "\e90a";
+}
+.icon-12-reject:before {
+  content: "\e90b";
+}
+.icon-13-xlsx:before {
+  content: "\e90c";
+}
+.icon-14-arrow:before {
+  content: "\e90d";
+}
+.icon-15-download:before {
+  content: "\e90e";
+}
+.icon-16-arrow:before {
+  content: "\e90f";
+}
+.icon-17-filter:before {
+  content: "\e910";
+}
+.icon-18-header-close:before {
+  content: "\e911";
+}
+.icon-19-header-open:before {
+  content: "\e912";
+}
+.icon-20-list-close:before {
+  content: "\e913";
+}
+.icon-21-list-open:before {
+  content: "\e914";
+}
+.icon-22-loading:before {
+  content: "\e915";
+}
+.icon-23-radio-off:before {
+  content: "\e916";
+}
+.icon-24-radio-on:before {
+  content: "\e917";
+}
+.icon-25-quotesvg:before {
+  content: "\e918";
+}
+.icon-26-line-arrow:before {
+  content: "\e919";
+}
+.icon-27-view:before {
+  content: "\e91a";
+}
+.icon-28-chart-download:before {
+  content: "\e91b";
+}
+.icon-29-chart-ascending:before {
+  content: "\e91c";
+}
+.icon-30-chart-descending:before {
+  content: "\e91d";
+}
+.icon-31-chart-num-ascending:before {
+  content: "\e91e";
+}
+.icon-32-chart-num-descending:before {
+  content: "\e91f";
+}
+.icon-33-chart-sorting:before {
+  content: "\e920";
+}
+.icon-34-chart-icon:before {
+  content: "\e921";
+}
+.icon-35-menu-icon:before {
+  content: "\e922";
+}
+.icon-36-right-arrow-angle:before {
+  content: "\e923";
+}

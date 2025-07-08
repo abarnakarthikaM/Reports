@@ -1,0 +1,87 @@
+<ng-container>
+
+    <!-- <div class="row"> -->
+    <!-- <div class="col-sm-10 col-12"> -->
+    <!-- <app-status-count *ngIf="listData?.default_data?.length > 0" [tabName]='tabName' [list]="listData">
+            </app-status-count> -->
+    <!-- </div> -->
+    <!-- <div class="col-sm-2 col-12 cls-search-container" *ngIf="list?.list_body?.length > 0">
+            <div class="form-group">
+                <input type="text" id="search-filed" class="cls-search-input" [(ngModel)]="searchQuery"
+                    [ngClass]="{'cls-search-field':listData.list_body.length == 0}" placeholder="Search"
+                    (keyup)="search()">
+                <label for="search-filed" class="cls-opacity">Search</label>
+            </div>
+        </div> -->
+    <!-- </div> -->
+
+    <!-- List component start-->
+    <div class="cls-showReportItem">
+        <ng-container
+            *ngIf="pagination && listData?.default_data?.length > 0 && flagData && appService?.groupPaceInfo?.reportSaveListEnable">
+            <div class="cls-displayingItem">
+                <app-items-per-page [defaultItem]="listData['default_Parms']['itemsPerPage']"
+                    [totalRecords]="listData['totalItems']" [arrowFlag]="flagData"
+                    (selectedItemPerPage)="selectedItem($event)">
+                </app-items-per-page>
+            </div>
+        </ng-container>
+        <div class="cls-listSearchItem">
+            <app-list [listData]="listData" [downloadHideFlag]="downloadHideFlag"
+                [activeSubMenuList]="activeSubMenuData" [arrowFlag]="flagData"
+                (updatedListData)="getUpdatedListData($event)" (status)="getStatus($event)"
+                (emitAction)="actionFunction($event)" [popupData]="popupData" (updatedData)="handleUpdatedData($event)"
+                (downloadData)="downloadData($event)" (queueListData)="getqueueListData($event)"></app-list>
+        </div>
+    </div>
+    <!-- List component end-->
+
+
+    <ng-container
+        *ngIf="pagination && listData?.default_data?.length > 0 && appService?.groupPaceInfo?.reportSaveListEnable">
+        <div class="row">
+
+            <!-- item per page component -->
+            <div class="col-sm-3" [ngClass]="{'cls-itemsPageHidden': flagData}">
+                <app-items-per-page [defaultItem]="listData['default_Parms']['itemsPerPage']"
+                    [totalRecords]="listData['totalItems']" (selectedItemPerPage)="selectedItem($event)">
+                </app-items-per-page>
+            </div>
+            <div class="col-sm-3" *ngIf="flagData">
+                <div class="dataTablesInfo" id="data-table_info" tabindex="0">{{'Showing'}} {{startData}} {{'to'}}
+                    {{endData}} {{'of'}} {{listData?.totalItems}} {{'entries'}}</div>
+            </div>
+
+            <!-- pagination component -->
+            <div class="col-sm-6" *ngIf=" listData['default_Parms']['itemsPerPage'] != 0">
+                <app-pagination [pages]="listData['noofPages']" [currentPage]="listData['currentPage']"
+                    (currentPageVal)="getCurrentPage($event)">
+                </app-pagination>
+            </div>
+
+            <!-- Jump to page component -->
+            <div class="col-sm-3 col-10  cls-jump-page" *ngIf=" listData['default_Parms']['itemsPerPage'] != 0">
+                <app-jump-page [noOfPage]="listData['noofPages']" [currentPage]="listData['currentPage']"
+                    (jumpToPage)="getCurrentPage($event)">
+                </app-jump-page>
+            </div>
+
+        </div>
+    </ng-container>
+
+</ng-container>
+
+
+<div class="cls-summary" *ngIf="summaryList?.head && listData.list_body?.length > 0">
+    <span class="cls-summary-heading">Summary</span>
+    <div class="cls-summary-head">
+        <div class="cls-summary-td {{ head.class }}" *ngFor="let head of summaryList.head">{{ head.headerName }}</div>
+    </div>
+
+    <div class="cls-summary-body">
+        <ng-container *ngFor="let data of summaryList.body">
+            <div class="cls-summary-data {{ head.class }}" *ngFor="let head of summaryList.head"> <span
+                    class="cls-currency">INR</span>{{ data[head['template']]}} </div>
+        </ng-container>
+    </div>
+</div>

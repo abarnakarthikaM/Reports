@@ -1,0 +1,47 @@
+{
+  "responseCode": 0,
+  "response": {
+    "Message": "Success",
+    "data": {
+      "menu": [
+        {
+          "menu_code": "group-request",
+          "path": "",
+          "icon_name": "Group Request",
+          "sub_menu": []
+        },
+        {
+          "menu_code": "registered-agents",
+          "path": "",
+          "icon_name": "Registered Agents",
+          "sub_menu": []
+        },
+        {
+          "menu_code": "standard-reports",
+          "path": "",
+          "icon_name": "Standard Report",
+          "sub_menu": []
+        },
+        {
+          "menu_code": "fare-override-report",
+          "path": "",
+          "icon_name": "Fare Override Report",
+          "sub_menu": []
+        },
+        {
+          "menu_code": "pnr-action-report",
+          "path": "",
+          "icon_name": "Pnr Action Report",
+          "sub_menu": []
+        },
+        {
+          "menu_code": "payment-tracking",
+          "path": "",
+          "icon_name": "Payment Tracking",
+          "sub_menu": []
+        }
+      ],
+      "route": []
+    }
+  }
+}

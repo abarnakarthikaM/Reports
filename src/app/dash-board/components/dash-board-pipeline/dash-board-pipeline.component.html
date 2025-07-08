@@ -1,0 +1,56 @@
+
+<h1 class="cls-heading my-4"> {{'Pipeline Dashboard' | translate }} </h1>
+
+<div class="row mb-5">
+
+     <!-- Pipeline Month wise start -->
+     <div class="col-sm-6 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <app-pipeline-currentyear (reloadService)="getReload($event)" [datacurrentyear]="datacurrentyear"></app-pipeline-currentyear>
+        </div>
+    </div>
+    <!-- Pipeline Month wise end -->
+    
+    <!-- Pipeline Month wise start -->
+    <div class="col-sm-6 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <app-pipeline-monthwise [datatocomparison]="datatocomparison"></app-pipeline-monthwise>
+        </div>
+    </div>
+    <!-- Pipeline Month wise end -->
+
+    <!--  Pipeline region wise start -->
+    <div class="col-sm-12 mt-5 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <!-- <app-pipeline-regionwise></app-pipeline-regionwise> -->
+            <app-pipeline-pos></app-pipeline-pos>
+        </div>
+    </div>
+    <!-- Pipeline region wise end -->
+
+    <!-- Pipeline sector wise start  -->
+    <div class="col-sm-6 mt-5 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <app-pipeline-sector></app-pipeline-sector>
+        </div>
+    </div>
+    <!-- Pipeline sector wise end -->
+
+    <!-- Pipeline station wise start  -->
+    <div class="col-sm-6 mt-5 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <app-pipeline-station></app-pipeline-station>
+        </div>
+    </div>
+    <!-- Pipeline station wise end -->
+
+
+
+    <!--  Pipeline travel agent wise start -->
+    <div class="col-sm-12 mt-5 cls-dashboard-chart">
+        <div class="cls-chart-container">
+            <app-pipeline-travelagent></app-pipeline-travelagent>
+        </div>
+    </div>
+    <!--  Pipeline travel agent wise end -->
+</div>

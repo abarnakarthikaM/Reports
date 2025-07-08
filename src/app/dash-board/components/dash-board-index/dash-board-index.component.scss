@@ -1,0 +1,21 @@
+.cls-nav-tab {
+    padding: 8px 0px;
+    border-bottom: 1px solid var(--BDRREGULAR);
+    margin-top: 24px;
+
+    .cls-nav-list {
+        color: var(--TXTDARK);
+        background-color: var(--BGLIGHTER);
+        padding: 9px 19px;
+
+        &.cls-active {
+            color: var(--PRIMARYCOLOR);
+            background-color: var(--BGWHITE);
+            padding: 11px 20px;
+            border-radius: 5px 5px 0px 0px;
+            border: 1px solid var(--BDRREGULAR);
+            border-bottom: unset;
+        }
+    }
+
+}

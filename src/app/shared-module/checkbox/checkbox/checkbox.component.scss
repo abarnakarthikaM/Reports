@@ -1,0 +1,179 @@
+@import '../../../../assets/scss/variables.scss';
+
+.cls-group-check {
+    margin: 30px 0px 15px;
+
+    // sub heading
+    .cls-head {
+        font: 16px var(--PRIMARYSEMIBOLDFONT);;
+        color: var(--TXTBLACK);
+        // font-weight: 600;
+        .cls-check{
+            float: right;
+            cursor: pointer;
+           .cls-checkall{
+            color: var(--TXTBLACK);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: var(--PRIMARYMEDIUMFONT);
+           }
+        }
+        .cls-fields-head {
+            font-family: var(--SECONDARYFONT);
+        }
+    }
+
+ // Checkbox design structure changes code
+
+// .cls-background {
+    //      background: #f4f4fa;
+    //      padding: 20px;
+    //      border-radius: 5px;
+    //      border: 1px solid var(--BORDERLIGHT);
+    //      display: flex;
+    //      flex-wrap: wrap;
+
+    //      .cls-label {
+    //          font-size: 16px;
+    //          display: inline-block;
+    //          padding: 10px 15px 10px;
+    //          color: var(--TEXTDARK);
+    //          position: relative;
+    //          width: 33%;
+    //          padding-left: 30px;
+    //      }
+    // .cls-icon-body {
+    //     margin-right: 10px;
+    //     // background: var(--BGWHITE);
+    //     position: absolute;
+    //     top: 13px;
+    //     left: 0;
+    // }
+    //  }
+
+
+
+//Custom report common strcture code
+
+        .cls-background {
+            background: #f4f4fa;
+            padding: 25px 25px 20px 35px;
+            border-radius: 5px;
+    
+            .cls-check-container {
+                display: inline-block;
+                cursor: pointer;
+    
+                .cls-label {
+                    font-size: 16px;
+                    display: inline-block;
+                    padding: 10px 30px 10px 0px;
+                    color: var(--TXTBLACK);
+                    cursor: pointer;
+    
+                }
+            }
+    
+        }
+
+    .icon-3-checkbox-on {
+        color: var(--PRIMARYCOLOR);
+    }
+
+    .cls-icon {
+        margin-right: 10px;
+        background: var(--TXTWHITE);
+        cursor: pointer;
+    }
+
+    .cls-disble {
+        pointer-events: none;
+
+        em {
+            opacity: 0.6;
+        }
+    }
+}
+
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max) {
+    .cls-group-check {
+        .cls-background {
+            .cls-check-container {
+                &.cls-data-name {
+                    .cls-icon {
+                        vertical-align: super;
+                    }
+                    .cls-label {
+                        width: 93%;
+                        vertical-align: middle;
+                        line-height: 1.5;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .cls-fields-head {
+            display: inline-block;
+            width: 88%;
+        }
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max), (min-width:$table-min) and (max-width:$table-max) {
+
+    .cls-group-check {
+        margin: 15px 0px 15px;
+        // display: inline-block;
+        // margin-bottom: 13px;
+        .cls-head {
+            font-size: 14px;
+            .cls-check {
+                float: left;
+                cursor: pointer;
+                margin: 1px 4px 0px 10px;
+            .cls-checkall {
+                display: none;
+                font-size: 16px;
+                padding-left: 4px;
+            }
+            }
+        }
+        .cls-background {
+            padding: 10px 10px 8px 10px;
+            border-radius: 5px;
+            .cls-check-container {
+                line-height: 1;
+                display: block;
+                .cls-label {
+                    font-size: 14px;
+                    padding: 4px 0px 4px 4px;
+                    margin-top: 10px;
+                    // width: 90%;
+                    // margin-bottom: 5px !important;
+                    // vertical-align: middle;
+                }
+            }
+        }
+        .cls-icon {
+            margin-right: 2px;
+            font-size: 12px;
+        }
+    }
+    .cls-fields-head {
+        font-size: 15px;
+        // vertical-align: middle;
+    }
+}
+
+@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-group-check {
+        .cls-background {
+            .cls-check-container {
+                .cls-label{
+                    padding: 5px 20px 5px 0px;
+                }
+            }
+        }
+    }
+}
+

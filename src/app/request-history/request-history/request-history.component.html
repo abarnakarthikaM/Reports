@@ -1,0 +1,316 @@
+<div class="cls-container container" *ngIf="historyData?.length > 0">
+    <div class="cls-heading">{{headerData?.title}} - <span class="cls-heading">{{headerData?.request_summary}}</span>
+    </div>
+    <!-- Request history page top note -->
+    <div class="cls-top-note" *ngIf="airlineCodeNote=='A3'">
+        <div class="cls-top-double-border"></div>
+        <div class="cls-note-cont">NOTE: History feature upgraded on 20-10-2024. Possible inconsistencies to requests
+            related to or created prior that date.</div>
+    </div>
+    <ng-container *ngFor="let history of historyData;let index = index">
+        <div class="cls-all-request"
+            [ngClass]="{'cls-new-color': history.type == 'new_request', 'cls-modify-color': history.type == 'modified_request', 'cls-fare-color': history.type == 'fare_quote' || history.type == 'approved' || history.type == 'Offer Accepted', 'cls-rq-reject': history.type == 'request_reject', 'cls-rq-resubmit': history.type == 'request_resubmit', 'cls-rq-cancel': history.type == 'request_cancelled', 'cls-off-expired': history.type == 'offer_expired', 'cls-down-size': history.type == 'DownSize',
+        'cls-modify-ap': history.type == 'modify_approval','cls-rq-nego': history.type == 'request_negotiation' || history.type == 'passenger_submitted','cls-off-decline': history.type == 'offer_declined','cls-pay-pending': history.type == 'payment_pending','cls-rq-divide': history.type == 'request_divided','cls-pnr-cancel': history.type == 'pnr_cancel','cls-billed': history.type == 'billed' || history.type == 'payment_completed','cls-upsize': history.type == 'upsize','cls-offer-accepted': history.type == 'offer_accepted',
+        'cls-request-rejected': history.type == 'request_rejected','cls-request-closed': history.type == 'request_closed','cls-add-request': history.type == 'addOn_request','cls-pnr-cancelled': history.type == 'pnr_cancelled','cls-negotiation': history.type == 'ReNegotiation','cls-request-resubmitted': history.type == 'Request Re-submitted','cls-offline-modification': history.type == 'offline_modification','cls-schedule-change': history.type == 'schedule_change','cls-divide': history.type == 'divide',
+        'cls-negotiation-rejected': history.type == 'negotiation_rejected','cls-new-tender': history.type == 'new_tender','cls-processed': history.type == 'processed','cls-tender-modifications': history.type == 'tender_modifications','cls-rejected': history.type == 'rejected','cls-cancelled': history.type == 'cancelled','cls-awarded': history.type == 'awarded','cls-timeline-extension': history.type == 'timeline_extension','cls-partially-paid': history.type == 'partial_payment','cls-payment-completed': history.type == 'payment_completed',
+        'cls-ticket-issued':history.type=='ticket_issued','cls-pnr-submitted':history.type=='pnr_submitted','cls-add-ancillary':history.type=='add_ancillary','cls-review-rejected':history.type=='review_rejected'}">
+            <div class="rq-name"
+                [ngClass]="{'cls-custom-marg': history.request_info.title.indexOf('_') == -1 && history.request_info.title.indexOf(' ') == -1 }">
+                {{ history.request_info.title?.split('_').join(' ') }}</div>
+            <div class="cls-object-container" id="ext-gen1383">
+                <div class="shape rq-shape" id="ext-gen1373">
+                    <div class="verticalline"></div>
+                    <div class="circleshape rq-cs" id="ext-gen1374"></div>
+                    <div class="cls-innercircle  rq-ic rq-icdd" id="ext-gen1375">
+                        <span class="cls-content date rq-icdd" id="ext-gen1377">
+                            <span class="day cls-day rq-icdd" id="ext-gen1378">{{
+                                history.request_info.date_time?.split(' ')[0] }}</span>
+                            <span class="month cls-text rq-icdd" id="ext-gen1376">{{
+                                history.request_info.date_time?.split(' ')[1].replace(',','') }}</span>
+                            <span class="year cls-text rq-icdd" id="ext-gen1379">{{
+                                history.request_info.date_time?.split(' ')[2] }}</span>
+                            <span class="time cls-text rq-icdd" id="ext-gen1380">{{
+                                history.request_info.date_time?.split(' ')[3] }}</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="cls-details">
+                    <div class="cls-detail-head">
+                        <div class="cls-heads">
+                            <div class="cls-detail-label"
+                                *ngFor="let data of history.main_details | keyvalue: originalOrder">
+                                <span class="cls-detail-header">
+                                    <ng-container *ngIf="data['key']=='adult_fare\\/pax'">{{'adult
+                                        fare/pax'}}</ng-container>
+                                    <ng-container *ngIf="data['key']!='adult_fare\\/pax'">{{ data['key']?.split('_').join('
+                                        ') }}</ng-container>
+                                </span>
+                                <span class="cls-detail-value" [ngClass]="{'cls-more': data['value'].indexOf('@') > -1}"
+                                    *ngIf="history.type!='divide' && history.type!='request_resubmit' && history.type!='upsize' && history.type!='ReNegotiation'&& history.type!='modified_request' && history.type!='Request Re-submitted' && history.type !='addOn_request' && history.type !='schedule_change' ">
+                                    {{data['value']?.split('\\').join('')}}
+                                    <span class="cls-email" *ngIf="data['value'].indexOf('@') > -1"
+                                        data-toggle="popover" data-placement="right" data-trigger="hover"
+                                        [attr.data-content]="data.value">More</span>
+                                </span>
+                                <span class="cls-detail-value" [ngClass]="{'cls-more': data['value'].indexOf('@') > -1}"
+                                    *ngIf="history.type =='divide' || history.type=='request_resubmit' ||  history.type=='upsize' || history.type=='ReNegotiation' ||  history.type=='modified_request' || history.type =='Request Re-submitted' || history.type =='addOn_request' || history.type =='schedule_change' ">
+                                    <ng-container *ngIf="data['key']!='request_id'">
+                                        {{data['value']?.split('\\').join('')}}
+                                    </ng-container>
+                                    <a class="cls-head-req" href="javascript:;"
+                                        (click)="historyDataParent($event,data['value'],'Requets')"
+                                        *ngIf="data['key']=='request_id'">{{ data['value'] }}</a>
+                                    <span class="cls-email" *ngIf="data['value'].indexOf('@') > -1"
+                                        data-toggle="popover" data-placement="right" data-trigger="hover"
+                                        [attr.data-content]="data.value">More</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="cls-view-contain">
+                            <button class="btn cls-view-btn" [ngClass]="{'cls-active': history.show }"
+                                (click)="handleToggle(index,history.show)"
+                                *ngIf="history.type!='processed'&& history.type!='cancelled' && history.type!='awarded' 
+                                                && history.type!='approved' && history.type!='rejected'&& history.type!='offer_accepted' && history.type!='offer_accepted' && history.type!='ReNegotiation' && history.type!='request_rejected'
+                                                && history.type!='offer_declined' && history.type!='request_closed'&& history.type!='request_cancelled' && history.type!='negotiation_rejected' && history.type!='pnr_submitted' && history.type != 'offer_expired' &&  history.type != 'review_rejected' && history.type !='schedule_change'">View
+                                details</button>
+                            <button class="btn cls-view-btn" [ngClass]="{'cls-active': history.show }"
+                                (click)="handleToggle(index,history.show)"
+                                *ngIf="history.type =='schedule_change' && !history.main_details['request_id']">View
+                                details</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <ng-container *ngIf="history.show">
+
+                        <div class="cls-details-content" *ngFor="let detail of history?.sub_details"
+                            [ngClass]="{'cls-sub-content':!detail.heading,'cls-tender-data':history.type=='tender_modifications'}">
+                            <div class="cls-content-head" *ngIf="detail.heading">{{ detail.heading.split('\\').join('')
+                                }}</div>
+
+                            <table class="tahead"
+                                *ngIf="!detail?.subHead && history.type!='modified_request' && history.type!='tender_modifications' && history.type!='schedule_change' && history.type !='offline_modification'"
+                                width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="cls-table-th" id="ext-gen1394" *ngFor="let data of detail.heads">{{
+                                            data?.split('_').join(' ') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let data of detail.details">
+
+                                        <tr *ngIf=" history.type !='new_tender'">
+                                            <td class="text-center" *ngFor="let head of detail.heads"
+                                                [ngClass]="{'cls-error-active':data[head]=='Rejected'&& history.type=='fare_quote','cls-remark':head=='remarks','cls-depature-date':(head=='departure_date'|| head=='departure_date&time') ,'cls-arrival-date':(head=='arrival_date'||head=='arrival_date&time'),'cls-flight-status':head=='flight_status'}">
+                                                <!-- departure_date	arrival_date -->
+                                                {{ data[head].split('\\').join('') }}
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf=" history.type =='new_tender'">
+                                            <td class="text-center" *ngFor="let head of detail.heads">
+                                                <ng-container *ngIf="head!='request_id'">{{ data[head]
+                                                    }}</ng-container><a class="cls-body-req" href="javascript:;"
+                                                    *ngIf=" history.type =='new_tender' && head=='request_id'"
+                                                    (click)="historyDataParent($event,data['request_id'],'Requets')">{{data['request_id']}}</a>
+                                            </td>
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+                            <!--Modify Request Table different data color adding  -->
+                            <table class="tahead"
+                                *ngIf="history.type=='modified_request' || history.type=='tender_modifications' || history.type=='schedule_change' || history.type=='offline_modification'"
+                                width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="cls-table-th" id="ext-gen1394" *ngFor="let data of detail.heads">
+                                            <ng-container *ngIf="data!='series_request_id'">{{ data?.split('_').join('
+                                                ') }}</ng-container>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <ng-container
+                                    *ngIf="detail.heading == 'Modified Details' && history.type!='tender_modifications'">
+                                    <tbody>
+                                        <ng-container *ngFor="let data of detail.details; let i=index">
+
+                                            <tr>
+                                                <ng-container
+                                                    *ngFor="let groupDetail of historyData[index]['sub_details'][0]['details']; let groupId=index">
+                                                    <!-- <ng-container *ngIf="groupDetail['trip_type']=='One-way'">
+                                                    <ng-container *ngIf="groupDetail['group_id'] == data['group_id']">
+                                                        <td class="text-center" *ngFor="let head of detail?.heads" [ngClass]="{'cls-data-change': historyData[index]['sub_details'][0]['details'][groupId][head] != data[head]}">
+                                                            <ng-container *ngIf="head!='series_request_id'">{{ data[head].split('\\').join('') }}</ng-container></td>
+                                                    </ng-container>
+                                                </ng-container> -->
+
+                                                    <!-- OneWay,RoundTrip and MultiCity flight color adding -->
+                                                    <ng-container>
+                                                        <ng-container
+                                                            *ngIf="groupDetail['group_id'] == data['group_id'] && groupDetail['series_request_id'] == data['series_request_id'] ">
+                                                            <td class="text-center" *ngFor="let head of detail?.heads"
+                                                                [ngClass]="{'cls-data-change': historyData[index]['sub_details'][0]['details'][groupId][head] != data[head],'cls-remark':head=='flight_number','cls-flight-status':head=='flight_status','cls-depature-date':(head=='departure_date'|| head=='departure_date&time') ,'cls-arrival-date':(head=='arrival_date'||head=='arrival_date&time')}">
+                                                                <ng-container *ngIf="head!='series_request_id'">{{
+                                                                    data[head].split('\\').join('') }}</ng-container>
+                                                            </td>
+                                                        </ng-container>
+                                                        <!-- RounTrip and Multicity new flight color adding -->
+                                                        <ng-container
+                                                            *ngIf="data['series_request_id'] == 0 && groupId == 0">
+                                                            <td class="text-center cls-data-change"
+                                                                *ngFor="let head of detail?.heads"
+                                                                [ngClass]="{'cls-remark':head=='flight_number','cls-flight-status':head=='flight_status','cls-depature-date':(head=='departure_date'|| head=='departure_date&time') ,'cls-arrival-date':(head=='arrival_date'||head=='arrival_date&time')}">
+                                                                <ng-container *ngIf="head!='series_request_id'">{{
+                                                                    data[head].split('\\').join('') }}</ng-container>
+                                                            </td>
+                                                        </ng-container>
+                                                    </ng-container>
+
+                                                </ng-container>
+                                            </tr>
+
+                                        </ng-container>
+                                    </tbody>
+                                </ng-container>
+                                <!-- Tender Modification color adding -->
+                                <ng-container
+                                    *ngIf="detail.heading == 'Modified Details' && history.type=='tender_modifications' ">
+                                    <tbody>
+                                        <ng-container *ngFor="let data of detail.details; let i=index">
+
+                                            <tr>
+                                                <td class="text-center" *ngFor="let head of detail?.heads"
+                                                    [ngClass]="{'cls-data-change': historyData[index]['sub_details'][0]['details'][i][head] != data[head]}">
+                                                    {{ data[head].split('\\').join('') }}</td>
+                                            </tr>
+
+                                        </ng-container>
+                                    </tbody>
+                                </ng-container>
+                                <ng-container *ngIf="detail.heading != 'Modified Details'">
+                                    <tbody>
+                                        <ng-container *ngFor="let data of detail.details">
+                                            <tr>
+                                                <td class="text-center" *ngFor="let head of detail.heads" [ngClass]="{'cls-flight-status':head=='flight_status','cls-depature-date':(head=='departure_date'|| head=='departure_date&time') ,'cls-arrival-date':(head=='arrival_date'||head=='arrival_date&time') }"> <ng-container
+                                                        *ngIf="head!='series_request_id'">{{
+                                                        data[head].split('\\').join('') }}</ng-container></td>
+                                            </tr>
+
+                                        </ng-container>
+                                    </tbody>
+                                </ng-container>
+                            </table>
+                            <ng-container *ngIf="detail?.subHead">
+                                <ng-container *ngFor="let dataInfo of detail.details">
+                                    <!-- Handle the header data -->
+                                    <table class="tahead" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="cls-table-th" id="ext-gen1394"
+                                                    *ngFor="let mainHeader of detail.heads">
+                                                    <span *ngIf="mainHeader!='pnrSubDetails'">{{
+                                                        mainHeader?.split('_').join(' ') }}</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let paymentData of dataInfo">
+                                                <td *ngFor="let mainHeader of detail.heads"  [ngClass]="{'cls-depature-date':(mainHeader=='departure_date'|| mainHeader=='departure_date&time') ,'cls-arrival-date':(mainHeader=='arrival_date'||mainHeader=='arrival_date&time')}">
+                                                    <span *ngIf="mainHeader!='pnrSubDetails'"
+                                                        [ngClass]="{'cls-error-active':mainHeader=='response'&& history.type=='payment_pending','cls-depature-date':(mainHeader=='departure_date'|| mainHeader=='departure_date&time') ,'cls-arrival-date':(mainHeader=='arrival_date'||mainHeader=='arrival_date&time')}">{{paymentData[mainHeader].split('\\').join('')}}</span>
+                                                </td>   
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Handle the sub header data -->
+                                    <ng-container *ngFor="let paymentSubData of dataInfo">
+                                        <table
+                                            *ngIf="paymentSubData.pnrSubDetails && paymentSubData.pnrSubDetails != '--'"
+                                            class="cls-subTable">
+                                            <thead class="cls-table-head">
+                                                <tr>
+                                                    <th class="cls-table-th" id="ext-gen1394"
+                                                        *ngFor="let subHeader of detail.subHead">
+                                                        {{ subHeader?.split('_').join(' ') }}
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="cls-table-body">
+                                                <tr *ngFor="let subInfo of paymentSubData.pnrSubDetails">
+                                                    <td *ngFor="let subdata of detail.subHead">
+                                                        {{subInfo[subdata].split('\\').join('')}}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </ng-container>
+                                </ng-container>
+                                <!-- Handle gst details -->
+                                <ng-container *ngFor="let dataInfo of detail?.gst_details">
+                                    <table class="tahead" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="cls-table-th" id="ext-gen1394"
+                                                    *ngFor="let mainHeader of detail?.gstHead">
+                                                    <span>{{
+                                                        mainHeader?.split('_').join(' ') }}</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td *ngFor="let mainHeader of detail?.gstHead">
+                                                    <span>{{dataInfo[mainHeader].split('\\').join('')}}</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </ng-container>
+                                 <!-- Handle pc details -->
+                                <ng-container *ngFor="let dataInfo of detail?.pc_details">
+                                    <table class="tahead" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="cls-table-th" id="ext-gen1394"
+                                                    *ngFor="let mainHeader of detail?.pcHead">
+                                                    <span>{{
+                                                        mainHeader?.split('_').join(' ') }}</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td *ngFor="let mainHeader of detail?.pcHead">
+                                                    <span>{{dataInfo[mainHeader].split('\\').join('')}}</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="historyData[index].remarks">
+                        <div class="remarks" id="ext-gen1600">
+                            <em class="icon-25-quotesvg quote-lt" aria-hidden="true"></em>
+                            <div class="remarks-text" id="ext-gen1609">
+                                <span class="remarks-head" id="ext-gen1611">Remarks</span>
+                                <span class="remarks-content"
+                                    id="ext-gen1610">
+                                    <!-- {{ historyData[index].remarks.remarks.split('\\/').join('/') }} -->
+                                    {{ historyData[index].remarks.remarks.split('amp;').join('') }}
+                                </span>
+                            </div>  
+                            <em class="icon-25-quotesvg quote-rt" aria-hidden="true"></em>
+                        </div>
+                    </ng-container>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+
+</div>

@@ -1,0 +1,336 @@
+@import '../../../../../assets/scss/variables.scss';
+.cls-head{
+    font-size: 20px;
+    font-weight: 600;
+    // margin-bottom: 20px;
+    display: inline-block;
+    text-transform: capitalize;
+    color:var(--TXTBLACK);
+}
+.cls-toggle-container {
+    .cls-toggle {
+        font-family: var(--SECONDARYFONT);
+    }
+  }
+  
+input{
+    font-size: 14px;
+}
+.icon-3-checkbox-on{
+    color: var(--PRIMARYCOLOR);
+}
+.cls-mandatory{
+    color: $ERROR;
+}
+.cls-heading{
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--PRIMARYCOLOR);
+    font-family: var(--SECONDARYFONT);
+}
+.cls-back{
+    color: #007bff;
+    cursor: pointer;
+    position: relative;
+    em{
+      transform: rotate(-135deg);
+      display: inline-block;
+      font-size: 10px;
+      position: absolute;
+      top: 5px;
+      left: -37%;
+      transition: 0.5s;
+    }
+    &:hover{
+        border-bottom: 1px solid #007bff;
+        em{
+            left: -45%;
+        }
+    }
+}
+.cls-bg{
+    background: var(--TXTWHITE);
+    padding: 15px;
+    border-radius: 5px;
+    .cls-inner-head{
+        display: inline-block;
+        color: var(--TXTBLACK);
+        font-weight: 600;
+        font-size: 14px;
+        margin: 5px 0; 
+    }
+    .cls-email-box{
+        width: 20%;
+        position: relative;
+        // .cls-add{
+        //     top: 20px;
+        //     position: absolute;
+        //     right: -50px;
+        //     cursor: pointer;
+        // }
+        .cls-add{
+            border-radius: 50px;
+            color: #007bff;
+            // width: 25%;
+            border: 1px solid #007bff;
+            background: var(--TXTWHITE);
+            padding: 2px 4px;
+            top: 15px;
+            position: absolute;
+            right: -80px;
+            cursor: pointer;
+            width: max-content;
+            em{
+                color: #007bff;
+                margin-right: 2px;
+            }
+            &:hover{
+              background: #007bff;
+              transition: 1s;
+              color: var(--TXTWHITE);
+              em{
+                color: var(--TXTWHITE);
+              }
+            }
+          }
+    }
+    .cls-email-container{
+        border: 2px dashed var(--BDRREGULAR);
+        padding: 10px;
+        border-radius: 5px;
+        .cls-mailid{
+                display: inline-block;
+                background: #edf0fa;
+                color:#007bff;
+                padding: 4px 10px;
+                border-radius: 5px;
+                margin: 10px;
+            em{
+                font-size: 11px;
+                color: $ERROR;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        }
+        
+    }
+    .cls-header{
+        font-size: 16px;
+        margin: 10px 0px;
+        display: inline-block;
+    }
+    .cls-email{
+        width: 60em;
+        margin-top: -20px;
+    }
+    .cls-daterange{
+        margin-top: 30px;
+        .cls-title{
+            font-size: 16px;
+            font-weight: bold;
+            color:var(--TXTBLACK);
+        }
+        .cls-background{
+            background: #f4f4fa;
+            padding: 20px;
+            border-radius: 5px;
+            .cls-label{
+                font-size: 16px;
+                display: inline-block;
+                padding: 10px 15px 10px;
+                color:var(--TXTBLACK);
+                cursor: pointer;
+                .icon-3-checkbox-on{
+                    color: var(--PRIMARYCOLOR);
+                }
+            }
+            .cls-icon{
+                margin-right: 10px;
+                background: var(--TXTWHITE);
+            }
+            &.cls-days-active{
+                border: 1px solid red;
+            }
+        }
+        .cls-date{
+            position: relative;
+            .cls-date-icon{
+              position: absolute;
+              right: 22px;
+              top: 20px;
+              color: var(--PRIMARYCOLOR);
+              cursor: pointer;
+            }
+          }
+    }
+    .cls-days{
+        .cls-label{
+            display: inline-grid;
+            font-size: 14px;
+            color: var(--TXTDARK);
+            margin-bottom: 20px;
+            &.cls-custom-label{
+                margin-left: 30px;
+            }
+            .cls-value{
+                font-size: 16px;
+            }
+        }
+    }
+    .cls-codition-title{
+        font-size: 16px;
+        font-weight: bold;
+        color:var(--TXTBLACK);
+        display: inline-block;
+    }
+    .cls-condition-box{
+        // border: 2px dashed #ccc;
+        background:#f4f4fa;
+        padding: 10px;
+        border-radius: 5px;
+        .cls-inner-head{
+            display: block;
+            text-transform: capitalize;
+        }
+        .cls-date{
+            display: inline-block;
+            color: var(--TXTBLACK);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .cls-check{
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--PRIMARYCOLOR);
+            cursor: pointer;
+        }
+    }
+    .cls-custom-btn{
+        text-align: center;
+        margin: 60px 0px;
+        .cls-submit{
+            background: var(--PRIMARYCOLOR);
+            color: var(--TXTWHITE);
+            padding: 5px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            // height: 30px;
+            box-shadow: unset;
+            transition: 0.4s;
+            &:hover{
+                // box-shadow: 0px 4px 10px 1px #EDF1F6
+                box-shadow: inset 8.5em 0 0 0 var(--TXTWHITE);
+                color: var(--PRIMARYCOLOR);
+            }
+        }
+    }
+    .cls-title{
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--TXTBLACK);
+        margin-bottom: 15px;
+        display: block;
+    }
+}
+.cls-schedule-condition {
+    margin-right: 15px;
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max) {
+   .cls-schedule-continer { 
+    padding: unset;
+   }
+    .cls-heading {
+        font-size: 18px;
+    }
+    .cls-bg {
+        padding: 15px 15px;
+        .cls-email-box {
+            width: 70%;
+        }
+        .cls-email-container {
+            .cls-mailid {
+                margin: 5px;
+            }
+            padding: 5px;
+        }
+        .cls-condition-box {
+            word-break: break-word;
+            padding: 10px 15px;
+            .cls-check {
+                margin-left: 0px;
+            }
+        }
+        .cls-daterange {
+            .cls-title {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .cls-background {
+                padding: 10px;
+                .cls-label {
+                    display: block;
+                    padding: 5px 5px 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+        .cls-custom-btn {
+            margin: 12px 0px;
+        }
+        .cls-codition-title {
+            font-size: 14px;
+        }
+    }
+    .cls-email-container {
+        overflow-y: scroll;
+    }
+.input-field {
+    width: 100%;
+}
+.cls-schedule-range {
+    margin-bottom: 0px;
+    .cls-date {
+        margin-right: 5px;
+        input {
+            font-size: 14px;
+        }
+    }
+}
+.cls-roll {
+    display: block;
+}
+.cls-schedule-condition {
+    display: block;
+    margin-bottom: 5px;
+}
+}
+@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-bg{
+        .cls-email-box {
+            width: 38%;
+        }
+        .cls-daterange {
+            .cls-date {
+                position: relative;
+                max-width: 44%;
+                flex: unset;
+            }
+        }
+    }
+    .cls-schedule-range {
+        .select-wrapper  {
+            width: 44%;
+        }
+        .input-field {
+            max-width: 44%;
+            max-width: 44%;
+            flex: unset;
+        }
+    }
+    .cls-date-to {
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,117 @@
+@import '../../../../assets/scss/variables.scss';
+.cls-auto-complete {
+    position: relative;
+    width: 20%;
+
+    .cls-load-label {
+        top: -10px !important;
+    }
+
+    .cls-add-mail {
+        position: absolute;
+        top: 20px;
+        right: -65px;
+
+        .cls-add {
+            border-radius: 50px;
+            color: #007bff;
+            border: 1px solid #007bff;
+            background: var(--BGWHITE);
+            padding: 2px 4px;
+            cursor: pointer;
+            width: max-content;
+
+            &:hover {
+                background: #007bff;
+                transition: 1s;
+                color: var(--TXTWHITE);
+            }
+
+            .cls-add-icon {
+                margin-right: 3px;
+            }
+        }
+    }
+
+    .cls-loader {
+        position: absolute;
+        width: 87%;
+        top: 24px;
+        border-radius: 5px;
+    }
+
+    .cls-mandatory {
+        color: $ERROR;
+    }
+
+}
+.input-field {
+
+    input {
+        // z-index: 1;
+        position: relative;
+        padding-left: 3px;
+
+        &:focus~.position-label {
+            font-size: 14px;
+        }
+    }
+
+    &.cls-date {
+        max-width: 20%;
+
+        .cls-date-range {
+            position: absolute;
+            bottom: 66px;
+            font-size: 14px;
+            color: var(--TXTDARK);
+        }
+    }
+
+    .position-label {
+        // background: var(--BGWHITE);
+        z-index: 2;
+        padding: 0px 3px;
+        text-transform: capitalize;
+    }
+
+
+    .cls-date-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: var(--PRIMARYCOLOR);
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max) {
+    .cls-autoComplete-container {
+        margin-bottom: unset;
+        .input-field {
+            input {
+                margin-bottom: 0px;
+                font-size: 14px;
+            }
+        }
+    }
+    .cls-auto-complete {
+        width: 100%;
+    }
+}
+@media screen and (min-width:$table-min) and (max-width:$table-max) {
+    .cls-auto-complete {
+        width: 100%;
+    }
+    .cls-autoComplete-container {
+        margin-bottom: unset;
+    }
+}
+@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max) {
+    .cls-auto-complete {
+        max-width: 50%;
+        width:50%;
+        flex: unset;
+    }
+    .cls-autoComplete-container {
+        margin-bottom: unset;
+    }
+}

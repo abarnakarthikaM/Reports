@@ -1,0 +1,12 @@
+<div class="dropdown" *ngIf="displayOption">
+    <button class="btn dropdown-toggle mt-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      <span class="cls-lang-code">{{choosenLanguage}}</span>
+      <!-- {{ choosenLanguage.name | translate }} -->
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item cls-ar-text-right" (click)="setLanguage(i)"
+        *ngFor="let language of languageData; let i = index" title="{{'Select The Language' |translate}}"><span
+          class="cls-lang-code">{{language.code}}</span>{{ language.name | translate }}</a>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<!-- <div class="row" [formGroup]="form">
+    <ng-container *ngFor="let data of formData;let i = index">
+        <div class="cls-check-container">
+            <form  [formGroup]="form">
+                <input type="radio"type="radio" id="data.keys" class="cls-input" formControlName="{{ this.conditionValue.keys }}">
+                  <label for="data.keys">{{data.name}}</label>
+                </form> -->
+            <!-- <input type="radio" class="cls-input" formControlName="{{ this.conditionValue.keys }}"> -->
+            <!-- <span class="cls-label" (click)="selectRadiobtn(data.status,i)"><em class="cls-icon" [ngClass]="{'icon-24-radio-on':formData[i].status=='Y','icon-23-radio-off':formData[i].status=='N'}" (click)="selectRadiobtn(data.status,i)"></em> {{data.name}}</span> -->
+        <!-- </div>
+    </ng-container>
+</div> -->
+<form [formGroup]="form">
+    <div class="row">
+      <div
+      class="cls-check-container"
+      *ngFor="let data of formData;let i = index">
+      <input type="radio" id="{{data.keys}}" required class="cls-input" formControlName="{{ data.keys }}">
+        <label class="cls-label" for="{{data.keys}}" (click)="selectRadiobtn(data.status,i)" ><em class="cls-icon" [ngClass]="{'icon-24-radio-on':formData[i].status=='Y','icon-23-radio-off':formData[i].status=='N'}" (click)="selectRadiobtn(data.status,i)"></em>{{data.name}}</label>
+      </div>
+    </div>
+  </form>
+  <!-- [ngClass]="{'cls-border-error':form.controls[data.keys].errors}" -->

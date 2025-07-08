@@ -1,0 +1,71 @@
+<div class="cls-main-container" [ngClass]="{'active':(appService.isEditReport || appService.summaryReportInfo.isSummaryReport) && !appService.queReportSideMenuList }">
+    <h4 class="cls-main-header" tabindex="0" *ngIf="appService.viewReports">{{ !appService.createReports && !appService.queReportSavedList ? 'Saved reports': appService.queReportSavedList ? 'Queue Reports': appService.isEditReport && !appService.queReportSavedList ? 'Edit reports' : 'Create reports'  }}  <span (click)="menuShowing()"><em *ngIf="appService.menuHide" class="icon-35-menu-icon cls-menu-list"></em></span></h4>
+    <h4 class="cls-main-header" tabindex="0" *ngIf="!appService.viewReports">{{ 'View reports' }}</h4>
+    <div class="cls-tab-data">
+        <div class="cls-tab-lists">
+            <a class="cls-list"  [ngClass]="{'cls-report-active':!savedReportHide,'cls-summary-report': appService.summaryReportInfo.isSummaryReport}" href="javascript:;" tabindex="0" (click)="handelFlow(appService.createReports ? 'list':'create')" >
+                {{appService.createReports ? 'Saved reports' : 'Create reports'}}
+            </a>
+            <a *ngIf="appService.queueReportEnable" class="cls-list" (click)="handelFlow('queue')" >
+                {{' | Queue Reports'}}
+            </a>
+              <!-- Following set of code is used to render the toggle element for edit the scheduled report -->
+            <div class="cls-toggle-container" *ngIf="appService.isEditReport?.reportAdditionalInfo?.scheduleInfo?.cronInfo && appService.viewReports">
+                <span class="cls-toggle" tabindex="0" id="tabData{{i}}" *ngFor="let menu of menu; let f = first; let i = index" [ngClass]="{'border-right-0': f && i != 1,'border-left-0': !f && i != 1,'active' : i==0}"  (keydown.enter)="selectTabMenu(menu.key,i,'tabData')" (click)="selectTabMenu(menu.key,i,'tabData')">{{ menu.name }}</span>
+            </div>
+        </div>
+        <div class="cls-mobile-toggle" [ngClass]="{'d-none':!appService.menuClick}" *ngIf="reportData">
+            <!-- <div class="cls-menu-bg"> -->
+                <div class="cls-sideMenuHeader">
+                    <span class="cls-menuList">Menu lists</span>
+                    <span class="cls-siedMenu-close"><em class="icon-12-reject" (click)="menuShowing()"></em> </span>
+                </div>
+               
+                <app-side-menu *ngIf="isResponsive" [reportKey]="reportKey" [sideMenuKey]="sideMenuKey"
+                    (listReport)="handelSubModuleChanges($event)"></app-side-menu>
+            <!-- </div> -->
+        </div>
+
+        <section class="cls-main menu">
+
+            <!-- // handle main side menu -->
+            <!-- <div class="cls-mobile-menu">Menu</div> -->
+            <nav *ngIf="reportData" class="cls-sideMenu">
+                 <!-- Following component is used for rendering the menu component -->
+                <app-side-menu  *ngIf="!isResponsive" [reportKey]="reportKey" [sideMenuKey]="sideMenuKey" (listReport)="handelSubModuleChanges($event)"></app-side-menu>
+            </nav>
+            <article class="cls-menuList" [ngClass]="{'d-none':appService.menuClick}">
+                <!-- Following component is used to render the create and edit flow based on the condition -->
+                <app-create-report-tab  *ngIf="appService.createReports" [activeModuleData]="activeSubMenuData" [savedReportHide]="savedReportHide"></app-create-report-tab>
+                <!-- Following component is used to rendered the saved report -->
+                <app-show-report-list *ngIf="!appService.createReports || this.appService.queReportSavedList" [activeModuleData]="activeSubMenuData" [savedQueueList] = "savedQueueList" ></app-show-report-list>
+                 
+            </article>
+
+        </section>
+        <div class="cls-show-report-table">
+            <ng-container *ngIf="appService.summaryReportInfo.isChart && appService.summaryReportInfo.isSummaryReport && appService?.showReportData?.data?.list_body?.length > 0">
+                  <!-- Following set of code is used for summary report -->
+                <div class="cls-show-chart-table">
+                    <div class="cls-chart-links"> 
+                        <a class="cls-pie-chart cls-tab-active" (click)="handleChartElement('pie')">Pie chart (Conversion percentage)</a>
+                        <a class="cls-bar-chart" (click)="handleChartElement('bar')">Bar chart (Fulfilled request)</a>
+                    </div>
+                    <div [ngSwitch]="chartName">
+                        <div *ngSwitchCase="'pie'">
+                            <app-show-report-pie-chart [summaryReportData]="summaryReportData" [chartData]="appService?.showReportData?.data?.list_body"></app-show-report-pie-chart>
+                        </div>
+                        <div *ngSwitchCase="'bar'">
+                            <app-show-report-bar-chart [summaryReportData]="summaryReportData" [chartData]="appService?.showReportData?.data?.list_body"></app-show-report-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+             <!-- Following component is used to rendered the show report table -->
+            <app-list-index [list]="appService?.showReportData?.data" (updatedListData)="getUpdatedListData($event)" [savedReportHide]="savedReportHide" [flagData]="appService?.showReportData?.flagData" *ngIf="appService?.showReportData?.isListShow && (appService?.showReportData?.data?.list_body || appService?.showReportData?.data?.tatReport || appService?.showReportData?.data?.groupPaceReport)"></app-list-index>
+        </div>
+
+    </div>
+</div>
+<!-- *ngIf="networkerror" -->
+<!-- <app-network-error *ngIf="networkerror"></app-network-error> -->

@@ -1,0 +1,736 @@
+{
+  "responseCode": 0,
+  "responseMessage": "ok",
+  "responseData": {
+    "fields": [
+      {
+        "head":"Report Type",
+        "status":"N",
+        "radio":[
+          {
+            "name": "Fare Override",
+            "keys": "fareoverride",
+            "status": "Y"
+          },
+          {
+            "name": "Timelimit Override",
+            "keys": "timelimitoverride",
+            "status": "N"
+          }
+        ],
+        "checkbox":[]
+      },
+      {
+        "head": "Request Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Group request id",
+            "keys": "groupRequestId",
+            "status": "N"
+          },
+          {
+            "name": "Group Name",
+            "keys": "groupName",
+            "status": "N"
+          },
+          {
+            "name": "Request type",
+            "keys": "requestType",
+            "status": "N"
+          },
+          {
+            "name": "Trip type",
+            "keys": "tripType",
+            "status": "N"
+          },
+          {
+            "name": "Trip category",
+            "keys": "tripCategory",
+            "status": "N"
+          },
+          {
+            "name": "Currency",
+            "keys": "currency",
+            "status": "N"
+          },
+          {
+            "name": "Requested / Expected Fare",
+            "keys": "requestedExpectedFare",
+            "status": "N"
+          },
+          {
+            "name": "User remarks",
+            "keys": "userRemarks",
+            "status": "N"
+          },
+          {
+            "name": "Requested date",
+            "keys": "requestedDate",
+            "status": "N"
+          },
+          {
+            "name": "Status of request",
+            "keys": "statusOfRequest",
+            "status": "N"
+          },
+          {
+            "name": "Group category",
+            "keys": "groupCategory",
+            "status": "N"
+          },
+          {
+            "name": "Created by",
+            "keys": "createdBy",
+            "status": "N"
+          },
+          {
+            "name": "Sector",
+            "keys": "sector",
+            "status": "N"
+          },
+          {
+            "name": "Country of origin/destination",
+            "keys": "countryOfOriginDestination",
+            "status": "N"
+          },
+          {
+            "name": "Requested departure date",
+            "keys": "requestedDepartureDate",
+            "status": "N"
+          },
+          {
+            "name": "Requested flight number",
+            "keys": "requestedFlightNumber",
+            "status": "N"
+          },
+          {
+            "name": "Request user",
+            "keys": "requestUser",
+            "status": "N"
+          },
+          {
+            "name": "Requested no of pax",
+            "keys": "requestedNoOfPax",
+            "status": "N"
+          },
+          {
+            "name": "TC count",
+            "keys": "tcCount",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "Evaluation Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Transit time",
+            "keys": "trasitTime",
+            "status": "Y"
+          },
+          {
+            "name": "Flight load",
+            "keys": "flightLoad",
+            "status": "N"
+          },
+          {
+            "name": "Exchange rate",
+            "keys": "exchangeRate",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Auto pilot policy",
+            "keys": "autoPilotPolicy",
+            "status": "N"
+          },
+          {
+            "name": "Request processed by",
+            "keys": "requestProcessedBy",
+            "status": "N"
+          },
+          {
+            "name": "Airline response date",
+            "keys": "airlineResponseDate",
+            "status": "N"
+          },
+          {
+            "name": "Reference request id",
+            "keys": "referenceRequestId",
+            "status": "N"
+          },
+          {
+            "name": "Cabin",
+            "keys": "cabin",
+            "status": "N"
+          },
+          {
+            "name": "Base fare",
+            "keys": "baseFare",
+            "status": "N"
+          },
+          {
+            "name": "Tax",
+            "keys": "tax",
+            "status": "N"
+          },
+          {
+            "name": "Group fare",
+            "keys": "groupFare",
+            "status": "N"
+          },
+          {
+            "name": "Evaluated fare",
+            "keys": "evaluatedFare",
+            "status": "N"
+          },
+          {
+            "name": "Stops",
+            "keys": "stops",
+            "status": "N"
+          },
+          {
+            "name": "TC tax",
+            "keys": "tcTax",
+            "status": "N"
+          },
+          {
+            "name": "TC base fare",
+            "keys": "tcBaseFare",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "Quoted Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Approved departure date",
+            "keys": "approvedDepartureDate",
+            "status": "N"
+          },
+          {
+            "name": "Approved flight number",
+            "keys": "approvedFlightNumber",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Approved no of pax",
+            "keys": "approvedNoOfPax",
+            "status": "N"
+          },
+          {
+            "name": "Response fare/Fare quoted",
+            "keys": "responseFareFareQuoted",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Airlines Remarks",
+            "keys": "airlinesRemarks",
+            "status": "N"
+          },
+          {
+            "name": "Transaction status",
+            "keys": "transactionStatus",
+            "status": "N"
+          },
+          {
+            "name": "Last actioned time (Airline)",
+            "keys": "lastActionedTime",
+            "status": "N"
+          },
+          {
+            "name": "Discount amount",
+            "keys": "discountAmount",
+            "status": "N"
+          },
+          {
+            "name": "SSRs",
+            "keys": "ssrs",
+            "status": "N"
+          },
+          {
+            "name": "SSR revenue",
+            "keys": "ssrRevenue",
+            "status": "N"
+          },
+          {
+            "name": "Displacement fare remarks",
+            "keys": "displacementFareRemarks",
+            "status": "N"
+          },
+          {
+            "name": "Adjusted amount",
+            "keys": "adjustedAmount",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "TA /RU Response details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Agent accepted fare",
+            "keys": "agentAcceptedFare",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Agent response date",
+            "keys": "agentResponseDate",
+            "status": "N"
+          },
+          {
+            "name": "Agent response remarks",
+            "keys": "agentResponseRemarks",
+            "status": "N"
+          },
+          {
+            "name": "Agent response status",
+            "keys": "agentResponseStatus",
+            "status": "Y"
+            
+          },
+          {
+            "name": "Reason for declining",
+            "keys": "reasonForDeclining",
+            "status": "N"
+          },
+          {
+            "name": "PNR",
+            "keys": "pnr",
+            "status": "N"
+          },
+          {
+            "name": "PNR status",
+            "keys": "pnrStatus",
+            "status": "N"
+          },
+          {
+            "name": "Fare expiry date",
+            "keys": "fareExpiryDate",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "Payment and Ticketings Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Amount paid",
+            "keys": "amountPaid",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Paid percentage",
+            "keys": "paidPercentage",
+            "status": "N"
+          },
+          {
+            "name": "Payment validity expired",
+            "keys": "paymentValidityExpired",
+            "status": "Y"
+            
+          },
+          {
+            "name": "Update name list validity",
+            "keys": "updateNameListValidity",
+            "status": "N"
+          },
+          {
+            "name": "Update name list validity type",
+            "keys": "updateNameListValidityType",
+            "status": "N"
+          },
+          {
+            "name": "Payment validity expired type",
+            "keys": "paymentValidityExpiredType",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "User Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Agency name",
+            "keys": "agencyName",
+            "status": "Y"
+            
+          },
+          {
+            "name": "Agent email id",
+            "keys": "agentEmailId",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Agent id",
+            "keys": "agentId",
+            "status": "N"
+          },
+          {
+            "name": "Travel IATA code",
+            "keys": "travelIataCode",
+            "status": "N"
+          },
+          {
+            "name": "POS",
+            "keys": "pos",
+            "status": "N"
+          },
+          {
+            "name": "Agent type",
+            "keys": "agentType",
+            "status": "N"
+          },
+          {
+            "name": "Country",
+            "keys": "country",
+            "status": "N"
+          },
+          {
+            "name": "City",
+            "keys": "city",
+            "status": "N"
+          }
+        ]
+      },
+      {
+        "head": "Negotiation Details",
+        "status": "N",
+        "checkbox": [
+          {
+            "name": "Negotiation requested date",
+            "keys": "negotiationRequestedDate",
+            "status": "N"
+          },
+          {
+            "name": "Negotiation rejected date",
+            "keys": "negotiationRejectedDate",
+            "status": "N"
+          },
+          {
+            "name": "Negotiation processed count",
+            "keys": "negotiationProcessedCount",
+            "status": "Y"
+           
+          },
+          {
+            "name": "Negotiation approved date",
+            "keys": "negotiationApprovedDate",
+            "status": "N"
+          },
+          {
+            "name": "Negotiation expiry date",
+            "keys": "negotiationExpiryDate",
+            "status": "Y"
+           
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "head": "Condition Details",
+        "checkbox": [
+          {
+            "name": "Agent email id",
+            "keys": "agentEmailId",
+            "status": "N",
+            "type": "autocomplete",
+            "autocomplete": [
+              {
+                "label": "Email Id",
+                "formControl": "email",
+                "required": true,
+                "reportName": "get-email-possible-values",
+                "basedOn": "groupRequest-agentEmailId"
+              }
+            ]
+          },
+          {
+            "name": "Date range of requests",
+            "keys": "dateRangeOfRequests",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "startDate",
+                "label": "From Date",
+                "required": true
+              },
+              {
+                "formControl": "endDate",
+                "label": "To Date",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Departure Date",
+            "keys": "departureDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "departureFrom",
+                "label": "Departure From",
+                "required": true
+              },
+              {
+                "formControl": "departureTo",
+                "label": "Departure To",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Group category",
+            "keys": "groupCategory",
+            "status": "N",
+            "type": "multiselect",
+            "multiselect": {
+              "formControl": "groupCategory",
+              "label": "Group category",
+              "required": true,
+              "template": "groupCategory"
+            }
+          },
+          {
+            "name": "POS",
+            "keys": "pos",
+            "status": "N",
+            "type": "autocomplete",
+            "autocomplete": [
+              {
+                "formControl": "pos",
+                "label": "POS",
+                "required": true,
+                "reportName": "get-pos-possible-values",
+                "basedOn": "groupRequest-pos"
+              }
+            ]
+          },
+          {
+            "name": "Sector",
+            "keys": "sector",
+            "status": "N",
+            "type": "autocomplete",
+            "autocomplete": [
+              {
+                "formControl": "sectorFrom",
+                "label": "Origin",
+                "required": true,
+                "reportName": "get-sector-possible-values",
+                "basedOn": "groupRequest-sector"
+              },
+              {
+                "formControl": "sectorTo",
+                "label": "Destination",
+                "required": true,
+                "reportName": "get-sector-possible-values",
+                "basedOn": "groupRequest-sector"
+              }
+            ]
+          },
+          {
+            "name": "Status of request",
+            "keys": "statusOfRequest",
+            "status": "N",
+            "type": "multiselect",
+            "multiselect": {
+              "formControl": "statusOfRequest",
+              "label": "Status of request",
+              "required": true,
+              "template": "statusOfRequest"
+            }
+          },
+          {
+            "name": "Travel agency",
+            "keys": "travelAgency",
+            "status": "N",
+            "type": "autocomplete",
+            "autocomplete": [
+              {
+                "formControl": "travelAgency",
+                "label": "Agency Name",
+                "required": true,
+                "reportName": "get-travel-agency-possible-values",
+                "basedOn": "groupRequest-travelAgency"
+              }
+            ]
+          },
+          {
+            "name": "Negotiation requested date",
+            "keys": "negotiationRequestedDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "negotiationRequestedFrom",
+                "label": "Negotiation requested from",
+                "required": true
+              },
+              {
+                "formControl": "negotiationRequestedTo",
+                "label": "Negotiation requested to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Negotiation approved date",
+            "keys": "negotiationApprovedDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "negotiationApprovedFrom",
+                "label": "Negotiation approved from",
+                "required": true
+              },
+              {
+                "formControl": "negotiationApprovedTo",
+                "label": "Negotiation approved to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Negotiation expiry date",
+            "keys": "negotiationExpiryDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "negotiationExpiryFrom",
+                "label": "Negotiation expiry from",
+                "required": true
+              },
+              {
+                "formControl": "negotiationExpiryTo",
+                "label": "Negotiation expiry to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Fare expiry date",
+            "keys": "fareExpiryDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "fareExpiryFrom",
+                "label": "Fare expiry from",
+                "required": true
+              },
+              {
+                "formControl": "fareExpiryTo",
+                "label": "Fare expiry to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Request processed by",
+            "keys": "requestProcessedBy",
+            "status": "N",
+            "type": "autocomplete",
+            "autocomplete": [
+              {
+                "formControl": "requestProcessedBy",
+                "label": "Responser Email Id",
+                "required": true,
+                "reportName": "get-email-possible-values",
+                "basedOn": "groupRequest-requestProcessedBy"
+              }
+            ]
+          },
+          {
+            "name": "Currency",
+            "keys": "currency",
+            "status": "N",
+            "type": "dropdown",
+            "dropdown": {
+              "formControl": "currency",
+              "label": "Currency",
+              "required": true,
+              "template": "currency"
+            }
+          },
+          {
+            "name": "Negotiation request status",
+            "keys": "negotiationRequestStatus",
+            "status": "N",
+            "type": "multiselect",
+            "multiselect": {
+              "formControl": "negotiationRequestStatus",
+              "label": "Negotiation request status",
+              "required": true,
+              "template": "negotiationRequestStatus"
+            }
+          },
+          {
+            "name": "Agent response date",
+            "keys": "agentResponseDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "agentResponseFrom",
+                "label": "Agent response from",
+                "required": true
+              },
+              {
+                "formControl": "agentResponseTo",
+                "label": "Agent response to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Airline response date",
+            "keys": "airlineResponseDate",
+            "status": "N",
+            "type": "datepicker",
+            "datepicker": [
+              {
+                "formControl": "airlineResponseFrom",
+                "label": "Airline response from",
+                "required": true
+              },
+              {
+                "formControl": "airlineResponseTo",
+                "label": "Airline response to",
+                "required": true
+              }
+            ]
+          },
+          {
+            "name": "Country",
+            "keys": "country",
+            "status": "N",
+            "type": "dropdown",
+            "dropdown": {
+              "formControl": "country",
+              "label": "Country",
+              "required": true,
+              "template": "country"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

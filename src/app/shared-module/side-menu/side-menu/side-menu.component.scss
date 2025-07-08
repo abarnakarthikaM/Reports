@@ -1,0 +1,66 @@
+@import '../../../../assets/scss/variables.scss';
+
+.cls-sidemenu-container{
+    // position: sticky;
+    // top: 0px;
+    li{ 
+        display: inline-block;
+        margin:0px 15px;
+        width: 80%;
+        a{
+            padding:15px 5px;
+            font-size: 16px;
+            color: var(--TXTLIGHT);
+            display: inline-block;
+            &:hover{
+                background-color:unset
+            }
+               
+        }
+        &.cls-active{
+            position: relative;
+            :after{
+                content:'';
+                position: absolute;
+                display:inline-block;
+                background: var(--PRIMARYCOLOR);
+                width:4px;
+                top:0px;
+                bottom: 0px;
+                left:-15px;
+                border-radius: 6px 0px 0px 6px;
+            }
+            a{
+                color: #000000;
+                font: 16px var(--PRIMARYSEMIBOLDFONT);
+                // font-weight: 600;
+
+            }
+        }
+        &.cls-side-menu{
+            display: none;
+        }
+    }
+    li+li{
+        border-top: 1px solid #EDF1F6;
+    }
+}
+
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),
+(min-width:$table-min) and (max-width:$table-max) {
+    .cls-sidemenu-container {
+        margin-top: 15px;
+
+        li {
+            width: 100%;
+            padding: 0px 10px;
+            margin: unset;
+
+            &.cls-active {
+                :after {
+                    left: 0px;
+                }
+            }
+        }
+    }
+}

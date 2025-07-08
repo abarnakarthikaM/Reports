@@ -1,0 +1,75 @@
+<div class="list-container" *ngIf="ListDataPage?.length > 0">
+    <div class="cls-list">
+        <div class="cls-list-row cls-list-row-head">
+            <div class="cls-list-data cls-head" *ngFor="let header of headerList">
+                {{header.headerName | translate }}
+            </div>
+            <div class="cls-list-data cls-head">
+                {{'Action' | translate }}
+            </div>
+        </div>
+    </div>
+    <div class="cls-list-item" *ngFor="let list of ListDataPage;let i= index;let last = last">
+        <div class="cls-list-row" [ngClass]="{'cls-last-border': last}">
+            <div *ngIf="list?.savedReportName" class="cls-list-body cls-hover-tooltip" title=" {{list?.savedReportName | translate | removeUnderscore | titlecase}}">
+                {{list?.savedReportName  | translate | removeUnderscore | titlecase}}
+            </div>
+            <div *ngIf="list.scheduleStatus" class="cls-list-body cls-status" [ngClass]="{'cls-schedule': list.scheduleStatus == 'Y','cls-notschedule': list.scheduleStatus == 'N'}">
+                <ng-container *ngIf="list.scheduleStatus === 'Y'">
+                    {{'Scheduled' | translate }}
+                </ng-container>
+                <ng-container *ngIf="list.scheduleStatus === 'N'">
+                   {{'Not Scheduled' | translate }}
+                </ng-container>
+            </div>
+            <div *ngIf="list.scheduleStatus" class="cls-list-body">
+                <ng-container *ngFor="let item of list.reportAdditionalInfo.scheduleInfo.frequencyDaysOfWeek; let last = last">
+                    <ng-container *ngFor="let val of daysList">
+                        <ng-container *ngIf="val.id === item">
+                            {{val.name}} <span *ngIf="!last">,</span>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngIf="!list.reportAdditionalInfo.scheduleInfo.frequencyDaysOfWeek">
+                   N/A
+                </ng-container>
+            </div>
+            <div *ngIf="list.scheduleStatus" class="cls-list-body">
+                <ng-container *ngIf="list.reportAdditionalInfo.scheduleInfo.frequencyStartDate">
+                   {{list.reportAdditionalInfo.scheduleInfo.frequencyStartDate | date: "dd-MMM-yyyy" }} to {{list.reportAdditionalInfo.scheduleInfo.frequencyEndDate | date: "dd-MMM-yyyy" }}
+                </ng-container>
+                <ng-container *ngIf="!list.reportAdditionalInfo.scheduleInfo.frequencyStartDate">
+                    N/A
+                 </ng-container>
+            </div>
+            <div class="cls-list-data">
+                <a href="javascript:;" role="button" class="cls-schedule-icon cls-hover-tooltip" [ngClass]="{'cls-disable': list.scheduleStatus ==='Y'}" (click)="openSchedule('schedule',i,ListDataPage)">
+                    <em class="cls-list-icon icon-6-history"></em>
+                    <span class="cls-tool">{{'Click To Schedule' | translate }}</span>
+                </a>
+                <a href="javascript:;" role="button" class="cls-edit-icon cls-hover-tooltip" (click)="openSchedule('edit',i,ListDataPage)">
+                    <em class="cls-list-icon icon-7-edit"></em>
+                    <span class="cls-tool">{{'Click To Edit' | translate }}</span>
+                </a>
+                <a href="javascript:;" role="button" class="cls-delete-icon cls-hover-tooltip" (click)="actionPerform(listData.val,list.savedReportId,ListDataPage,i)">
+                    <em class="cls-list-icon icon-5-delete"></em>
+                    <span class="cls-tool">{{'Click To Delete' | translate }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- No Data found start -->
+    <div class="cls-no-data-found" *ngIf="listData?.value?.length == 0">
+        <img src="./assets/images/NoDataFoundEmpty.svg" title="No Data found" alt="No Data found" class="no-record-found-img">
+        <span class="no-data-found"> {{'No Data Found' | translate }} !</span>
+    </div>
+<!-- No Data found end -->
+<app-alert *ngIf="confirmation" [userInput]="confirmationContent" (choosedVal)="confirmAction($event)"></app-alert>
+
+<div class="row">
+    <div class="col-md-12">
+        <app-common-paginate (paginate)="pageReport($event)" [source]="listData.value">
+        </app-common-paginate>
+    </div>
+</div>

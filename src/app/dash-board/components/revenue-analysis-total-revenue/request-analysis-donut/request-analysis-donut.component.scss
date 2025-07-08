@@ -1,0 +1,10 @@
+@import '../../../../../assets/scss/variables.scss';
+.cls-pie-download {
+    height: 300px;
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max) {
+    .cls-pie-download {
+        position: relative;
+        right: 75px;
+    }
+}

@@ -1,0 +1,76 @@
+/************************************************************************************
+CSS Description : Internet Error page
+Author          : K.Mohanraj
+Created Date    : 25 July 2023
+*************************************************************************************/
+@import '../../../../src/assets/scss/variables.scss';
+// network page font
+.cls-network{
+//   .cls-network-error{
+//     @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+//       width: 84%;
+//     }
+    
+//   }
+ .cls-content{
+    width:35%;
+    margin:0px auto;
+    // @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+    //   width: 87%;
+    // }
+    
+    .cls-title{
+      color: var(--TXTBLACK);
+      font: 36px "JasmineBold";
+    //   @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+    //     font: 30px "JasmineBold";
+    //   }
+    }
+    .head{
+        color: var(--TXTBLACK);
+        font:16px "Poppins-Light";
+    }
+    .cls-try{
+        font:14px "Poppins-Light";
+        color: var(--TXTBLACK);
+        &:before{
+            content: "\e919";
+            font-family: 'inficon';
+            color:var(--TXTBLACK);
+            margin-right:8px;
+            font-size:18px;
+            vertical-align: middle;
+        }
+    }
+  }
+  .cls-custombtn{
+    background: linear-gradient( to right,#172570,#0355a9) !important;
+    color:var(--TXTWHITE);
+    border-radius: 8px;
+    padding: 6px 50px;
+    &.cls-active{
+      .continue-btn{
+        display: none;
+      }
+      .spinner-border{
+        display: block;
+        padding: 0px;
+      }
+    }
+    .spinner-border{
+      display: none;
+    }
+    .cls-arrow-icon{
+      position: relative;
+      top: 2px;
+      &:hover{
+        right: -8%;
+      }
+    }
+    &:hover{
+      .cls-arrow-icon{
+      right: -8%;
+      }
+    }
+  }
+}

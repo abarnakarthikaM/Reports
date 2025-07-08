@@ -1,0 +1,19 @@
+<!-- <p>request-trend-comparison2 works!</p> -->
+<div class="" *ngIf="loader">
+    <app-common-loader [idVal]= 3></app-common-loader>
+</div>
+<img class="cls-reload-icon" *ngIf="reload" src="./../../../../assets/images/icons/icon-1-reload.svg" title="Reload" (click)="reloadItem()" alt="">
+<div id="chart" *ngIf="!loader && !reload">
+    <!-- Custom select box start -->
+    <div class="cls-custom-select-box" (click)="openSelectBox();$event.stopPropagation()">
+        {{selectedVal | translate }} <em class="icon-33-chart-sorting" aria-hidden="true"></em>
+    </div>
+    <ul class="cls-select-box-options" *ngIf="selectbox" (click)="$event.stopPropagation()">
+        <li *ngFor="let option of options" (click)="select(option.val)"> {{option.val | translate }} </li>
+    </ul>
+    <!-- Custom select box end -->
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions" [responsive]="chartOptions.responsive" [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [legend]="chartOptions.legend" [fill]="chartOptions.fill" [title]="chartOptions.title"></apx-chart>
+</div>

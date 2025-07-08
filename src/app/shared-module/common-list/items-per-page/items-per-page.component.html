@@ -1,0 +1,17 @@
+<div *ngIf="!appService.listDisplayHide"class="cls-itemsPerPage" tabindex="0"  [ngClass]="{'cls-displayingShow':arrowFlag}">
+    <span class="cls-label cls-displaying"> Displaying </span>
+    <div class="cls-month-select">
+        <div class="cls-custom-select" tabindex="0" (keydown.enter)="$event.stopPropagation();openItems()" (click)="$event.stopPropagation();openItems()">
+            <span class="cls-filter-months">
+                {{selectedItem}}
+                <!-- <em class="icon-12-caret-down"></em> -->
+            </span>
+        </div>
+        <div class="cls-custom-select-box" *ngIf="itemsShow" (click)="$event.stopPropagation()">
+            <span class="cls-select-item" *ngFor="let item of items;let index = index"  tabindex="0" (keydown.enter)="selectItem(item)" (click)="selectItem(item)">
+                {{item}}
+            </span>
+        </div>
+    </div>
+    <span class="cls-label">/&nbsp;{{ totalRecords }} </span>
+</div>

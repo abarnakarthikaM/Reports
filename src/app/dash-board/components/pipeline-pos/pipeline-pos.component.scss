@@ -1,0 +1,57 @@
+@import "../../../../assets/scss/variables.scss";
+.cls-reload-icon{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 13% auto;
+}
+.cls-custom-select-box{
+    position: absolute;
+    padding: 2px 12px;
+    min-width: 140px;
+    background: var(--BGWHITE);
+    border: 1px solid var(--BORDERDARKER);
+    border-radius: 5px;
+    top: 0px;
+    right: 22px;
+    margin-top: 8px;
+    z-index: 1;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    max-height: 115px;
+}
+.cls-select-drop-icon {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    font-size: 5px;
+}
+
+.cls-dropdown-data.dropdown {
+    text-align: right;
+
+    .cls-download {
+        position: absolute;
+        top: 30px;
+        right: 13px;
+        z-index: 10;
+    }
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max){
+    .cls-dropdown-data.dropdown {
+        .cls-download {
+            top: 25px;
+            right: 0px;
+        }
+    }
+    .cls-custom-select-box{
+        top: 25px !important;
+        right: 45px !important;
+        min-width: 135px !important;
+        padding: 0px 6px !important;
+        .cls-select-drop-icon{
+            right: 9px;
+            top: 9px;
+        }
+    }
+}

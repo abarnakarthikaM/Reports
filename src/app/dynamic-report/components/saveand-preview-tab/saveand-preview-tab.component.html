@@ -1,0 +1,41 @@
+<div *ngIf="conditionDetails">
+    <div *ngIf="appService.isFieldData" class="cls-collape-drag-and-drop">
+         <span class=" cls-collapse-report-tittle"  data-toggle="collapse" href="#dragAndDropCollapse" tabindex="0" aria-expanded="false" aria-controls="dragAndDropCollapse" (click)="toggleFields()">Selected fields<em class="cls-drag-open"[ngClass]="{'icon-18-header-close':dragAndDrop,'icon-19-header-open':!dragAndDrop}"></em></span>
+            <div class="collapse multi-collapse" id="dragAndDropCollapse">
+        <app-drag-drop-index [dragAndDropField]="selectedFields"
+            (suffleValues)="suffleValues($event)"></app-drag-drop-index>
+        </div>
+    </div>
+    <div *ngIf="appService.isFieldData" class="cls-drag-and-drop">
+       <span class="cls-report-tittle" tabindex="0">Selected fields</span>
+       <!-- Following component is used for rendering the selected fields in review and save page and 
+            also used for changing the field order by means of drag and drop the fields -->
+       <app-drag-drop-index [dragAndDropField]="selectedFields"
+           (suffleValues)="suffleValues($event)"></app-drag-drop-index>
+   </div>
+    <div class="cls-form-tab">
+        <span class="cls-conditions-tittle">Selected conditions</span>
+           <!-- Following line is used to render the selected condition and also render the condition using the form component. The form
+            component render by means of their form action value like dropdown, autocomplete, input, datepicker and multiselect -->
+                <ng-container *ngFor="let item of allConditionValues">
+                    <span class="cls-inner-head mb-2">{{item.name | translate }} : </span>
+                    <app-form #form [formData]="item.condition_value" [items]="item" [dropdownDefaultVal]="dropdownDefaultVal" [updatedformData]="updatedformData"
+                        (dropdownSelectVal)="dropdownSelectVal($event)"></app-form>
+                </ng-container>
+    </div>
+    <div class="text-center cls-button-group" id="showTableButton">
+        <button class="btn cls-submit mr-5" (click)="handleShowReport()" [disabled]="isBtnLoader" >
+            <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="isBtnLoader">
+                <span class="sr-only">Loading...</span>
+            </div>
+            {{'Show report' | translate}}
+        </button>
+        <button class="btn cls-submit cls-save-report mr-5" (click)="createReport(!flagSaveReportFlow ? 'save': 'update')" *ngIf="savedListFlag && appService.viewReports && !appService.summaryReportInfo.isSummaryReport">{{ !flagSaveReportFlow ? 'Save report' : 'Update report' | translate}}</button>
+    </div>
+    <!-- <div>
+        <app-list-index [list]="listData" [flagData]=" flagData" *ngIf="isListShow && listData?.list_body?.length > 0"></app-list-index>
+    </div> -->
+   
+</div>
+<!-- Following alert input box is used to enter the reports name to be saved -->
+<app-alert-input *ngIf="flagSaveReportModel" [alertIpData]="inputAlertInfo" (inputAlertInfo)="handelReportName($event)"></app-alert-input>

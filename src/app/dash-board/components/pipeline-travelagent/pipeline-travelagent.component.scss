@@ -1,0 +1,176 @@
+@import "../../../../assets/scss/variables.scss";
+.cls-reload-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 13% auto;
+}
+.cls-downlaod-icon {
+    margin-top: 2rem;
+    // margin-right: 10rem;
+}
+.cls-table {
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 10px 20px;
+    margin: 30px !important;
+    // min-width: 600px;    
+    // background:var(--TXTWHITE);
+    border-radius: 5px;
+    .cls-table-body {
+        max-height: 250px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .cls-table-header {
+        // background:#febc3b 100%;
+        span{
+            color: var(--TXTWHITE);
+            font-family: var(--PRIMARYREGULARFONT);
+            em{
+                padding-left: 10px;
+            }
+        }   
+        color: var(--TXTWHITE);
+        div:nth-child(1) {
+            // background-color: #008ffb;
+            span{
+                color: var(--TXTBLACK);
+                font-family: var(--PRIMARYREGULARFONT);
+                em{
+                    padding-left: 10px;
+                }
+            }
+            
+        }
+        div:nth-child(2) {
+            background-color: #1d5cac;
+        }
+        div:nth-child(3) {
+            background-color: #f1a917;
+        }
+        div:nth-child(4) {
+            background-color: #f73b3c;
+        }
+        .cls-table-cell {
+            font-family: 'var(--PRIMARYREGULARFONT)';
+            font-weight: 600;
+            // @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+            //     // overflow-x: scroll;
+            //     display: block;
+            // }
+        }
+    }
+    // .cls-table-header{
+        
+    // }
+    .cls-table-row{
+        // border-bottom: 1px solid #000;
+        &.cls-even-row {
+            background: linear-gradient(to bottom, #fff 0%, #fafafa 100%);
+            
+        }
+        &:last-child {
+            // border-bottom: none;
+        }   
+     }
+
+    .cls-table-header,
+    .cls-table-row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+        .cls-table-cell {
+            font-size: 14px;
+            width: 25%;
+            align-items: center;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            .cls-agent-name {
+                font-weight: 500;
+            }
+            // @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+            //     // overflow-x: scroll;
+            //     display: block;
+            // }
+        }
+    }
+    // @media screen and (min-width:$mobile-min) and (max-width:$mobile-max){
+    //     overflow-x: scroll;
+    //     display: block;
+    //     .cls-table-cell span{
+    //         display: block;
+    //         width: fit-content;
+    //     }
+    // }
+}
+.cls-custom-select-box{
+    position: absolute;
+    padding: 2px 12px;
+    min-width: 140px;
+    background: var(--BGWHITE);
+    border: 1px solid var(--BORDERDARKER);
+    border-radius: 5px;
+    top: 1px;
+    right: 22px;
+    margin-top: 8px;
+    z-index: 1;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    max-height: 115px;
+}
+.cls-dashboard-dwnld {
+    position: absolute;
+    top: 45px;
+    right: 28px;
+    cursor: pointer;
+    cursor: pointer;
+}
+.cls-select-drop-icon {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    font-size: 5px;
+}
+@media screen and (min-width:$mobile-min) and (max-width:$mobile-max),(min-width:$table-min) and (max-width:$table-max) {
+    .cls-custom-select-box {
+        top: 25px !important;
+        right: 45px !important;
+        min-width: 135px !important;
+        padding: 0px 6px !important;
+        .cls-select-drop-icon {
+            right: 9px;
+            top: 9px;
+        }
+    }
+    .cls-dashboard-dwnld {
+        top: 5px;
+        right: 6px;
+    }
+    .cls-table {
+        margin: unset !important;
+        padding: 10px 0px !important;
+        .cls-table-header{
+            div:nth-child(2) {
+                padding-top: 25px;
+            }
+            .cls-table-cell {
+                height: 80px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+@media screen and (min-width:$lg-tablet-min) and (max-width:$lg-tablet-max){
+    .cls-table{
+        .cls-table-header{
+            .cls-table-cell{
+                height: 50px;
+            }
+        }
+    }
+}
