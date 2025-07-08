@@ -1,0 +1,33 @@
+
+.App {
+  text-align: center;
+}
+
+.ant-layout {
+  background: #f0f2f5;
+}
+
+.ant-layout-header {
+  background: #fff;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-layout-sider {
+  background: #001529;
+}
+
+.ant-layout-content {
+  background: #fff;
+  border-radius: 8px;
+  margin: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .ant-layout-content {
+    margin: 8px;
+    padding: 16px;
+  }
+}

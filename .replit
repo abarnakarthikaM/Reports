@@ -22,7 +22,7 @@ localPort = 5000
 externalPort = 5000
 
 [workflows]
-runButton = "Run Angular App"
+runButton = "Start React Dev Server"
 
 [[workflows.workflow]]
 name = "Run React App"
@@ -61,6 +61,19 @@ args = "npm run preview"
 
 [[workflows.workflow]]
 name = "Run Angular App"
+author = 44752192
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm install"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Start React Dev Server"
 author = 44752192
 mode = "sequential"
 
