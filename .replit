@@ -17,6 +17,10 @@ externalPort = 3000
 localPort = 4200
 externalPort = 80
 
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
 [workflows]
 runButton = "Run Angular App"
 
