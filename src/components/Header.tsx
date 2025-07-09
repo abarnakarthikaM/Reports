@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ productData }) => {
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
     }}>
       <Title level={3} style={{ margin: 0, color: '#001529' }}>
-        AI Learning
+        {/* AI Learning */}
       </Title>
       <div style={{ color: '#666' }}>
         {getFormattedDate()}
