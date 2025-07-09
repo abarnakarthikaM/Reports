@@ -5,6 +5,12 @@ import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import type { TaskRow, TeamActivityFormData } from '../types';
 
+// Ensure dayjs plugins are loaded
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+dayjs.extend(customParseFormat);
+dayjs.extend(advancedFormat);
+
 const { Option } = Select;
 
 const TeamActivity: React.FC = () => {
@@ -95,7 +101,12 @@ const TeamActivity: React.FC = () => {
 
   const updateTask = (id: number, field: keyof TaskRow, value: any) => {
     setTasks(tasks.map(task => 
-      task.id === id ? { ...task, [field]: value } : task
+      task.id === id ? { 
+        ...task, 
+        [field]: (field === 'taskStartDate' || field === 'taskEndDate') 
+          ? (value && dayjs.isDayjs(value) ? value : dayjs()) 
+          : value 
+      } : task
     ));
   };
 
@@ -212,7 +223,7 @@ const TeamActivity: React.FC = () => {
       key: 'taskStartDate',
       render: (text: string, record: TaskRow) => (
         <DatePicker
-          value={record.taskStartDate}
+          value={record.taskStartDate && dayjs.isDayjs(record.taskStartDate) ? record.taskStartDate : null}
           onChange={(date) => updateTask(record.id, 'taskStartDate', date)}
           style={{ width: '100%' }}
         />
@@ -224,7 +235,7 @@ const TeamActivity: React.FC = () => {
       key: 'taskEndDate',
       render: (text: string, record: TaskRow) => (
         <DatePicker
-          value={record.taskEndDate}
+          value={record.taskEndDate && dayjs.isDayjs(record.taskEndDate) ? record.taskEndDate : null}
           onChange={(date) => updateTask(record.id, 'taskEndDate', date)}
           style={{ width: '100%' }}
         />
@@ -259,8 +270,15 @@ const TeamActivity: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '24px' }}>
-      <Card title="Team Activity" style={{ marginBottom: '24px' }}>
+    <div style={{ padding: '24px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
+      <Card 
+        title="Team Activity" 
+        style={{ 
+          marginBottom: '24px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          borderRadius: '8px'
+        }}
+      >
         <Form
           form={form}
           layout="vertical"
@@ -278,7 +296,10 @@ const TeamActivity: React.FC = () => {
                 name="date"
                 rules={[{ required: true, message: 'Please select date!' }]}
               >
-                <DatePicker style={{ width: '100%' }} />
+                <DatePicker 
+                  style={{ width: '100%' }}
+                  format="YYYY-MM-DD"
+                />
               </Form.Item>
             </Col>
             <Col xs={24} sm={8}>
@@ -308,8 +329,17 @@ const TeamActivity: React.FC = () => {
 
       <Card 
         title="Tasks" 
+        style={{ 
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          borderRadius: '8px'
+        }}
         extra={
-          <Button type="primary" icon={<PlusOutlined />} onClick={addTaskRow}>
+          <Button 
+            type="primary" 
+            icon={<PlusOutlined />} 
+            onClick={addTaskRow}
+            style={{ borderRadius: '6px' }}
+          >
             Add Task
           </Button>
         }
@@ -320,10 +350,23 @@ const TeamActivity: React.FC = () => {
           rowKey="id"
           pagination={false}
           scroll={{ x: 1200 }}
+          size="small"
+          bordered
+          style={{ marginBottom: '16px' }}
         />
         
         <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <Button type="primary" onClick={() => form.submit()}>
+          <Button 
+            type="primary" 
+            size="large"
+            onClick={() => form.submit()}
+            style={{ 
+              borderRadius: '6px',
+              paddingLeft: '32px',
+              paddingRight: '32px',
+              height: '40px'
+            }}
+          >
             Submit Team Activity
           </Button>
         </div>
