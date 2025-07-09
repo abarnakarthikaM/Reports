@@ -362,7 +362,7 @@ const TeamActivity: React.FC = () => {
           </Button>
         }
       >
-        <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
+        <div style={{ overflowX: 'hidden', marginBottom: '16px' }}>
           <Table
             columns={columns}
             dataSource={tasks}
