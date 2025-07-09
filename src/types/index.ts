@@ -15,6 +15,8 @@ export interface PlanDetails {
   tasks: string[];
 }
 
+import type { Dayjs } from 'dayjs';
+
 export interface TaskRow {
   id: number;
   mainTask: string;
@@ -23,8 +25,8 @@ export interface TaskRow {
   resourceName: string;
   phaseAndSprint: string;
   status: string;
-  taskStartDate: string;
-  taskEndDate: string;
+  taskStartDate: Dayjs;
+  taskEndDate: Dayjs;
   comments: string;
 }
 

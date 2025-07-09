@@ -18,8 +18,8 @@ const TeamActivity: React.FC = () => {
       resourceName: '',
       phaseAndSprint: '',
       status: '',
-      taskStartDate: dayjs().format('YYYY-MM-DD'),
-      taskEndDate: dayjs().add(7, 'day').format('YYYY-MM-DD'),
+      taskStartDate: dayjs(),
+      taskEndDate: dayjs().add(7, 'day'),
       comments: ''
     }
   ]);
@@ -80,8 +80,8 @@ const TeamActivity: React.FC = () => {
       resourceName: '',
       phaseAndSprint: '',
       status: '',
-      taskStartDate: dayjs().format('YYYY-MM-DD'),
-      taskEndDate: dayjs().add(7, 'day').format('YYYY-MM-DD'),
+      taskStartDate: dayjs(),
+      taskEndDate: dayjs().add(7, 'day'),
       comments: ''
     };
     setTasks([...tasks, newTask]);
@@ -212,8 +212,8 @@ const TeamActivity: React.FC = () => {
       key: 'taskStartDate',
       render: (text: string, record: TaskRow) => (
         <DatePicker
-          value={dayjs(record.taskStartDate)}
-          onChange={(date) => updateTask(record.id, 'taskStartDate', date?.format('YYYY-MM-DD'))}
+          value={record.taskStartDate}
+          onChange={(date) => updateTask(record.id, 'taskStartDate', date)}
           style={{ width: '100%' }}
         />
       )
@@ -224,8 +224,8 @@ const TeamActivity: React.FC = () => {
       key: 'taskEndDate',
       render: (text: string, record: TaskRow) => (
         <DatePicker
-          value={dayjs(record.taskEndDate)}
-          onChange={(date) => updateTask(record.id, 'taskEndDate', date?.format('YYYY-MM-DD'))}
+          value={record.taskEndDate}
+          onChange={(date) => updateTask(record.id, 'taskEndDate', date)}
           style={{ width: '100%' }}
         />
       )
@@ -266,7 +266,7 @@ const TeamActivity: React.FC = () => {
           layout="vertical"
           onFinish={onSubmit}
           initialValues={{
-            date: dayjs().format('YYYY-MM-DD'),
+            date: dayjs(),
             workingResources: 1,
             selectedProduct: ''
           }}
