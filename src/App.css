@@ -1,3 +1,37 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-content {
+  background: #fff;
+  overflow: auto;
+}
+
+.ant-table-wrapper {
+  background: #fff;
+}
+
+.ant-card {
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .ant-table {
+    font-size: 12px;
+  }
+
+  .ant-input, .ant-select {
+    font-size: 12px;
+  }
+}
 
 .App {
   text-align: center;

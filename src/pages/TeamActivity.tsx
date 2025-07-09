@@ -124,6 +124,7 @@ const TeamActivity: React.FC = () => {
       title: 'Main Task',
       dataIndex: 'mainTask',
       key: 'mainTask',
+      width: 150,
       render: (text: string, record: TaskRow) => (
         <Select
           value={record.mainTask}
@@ -141,6 +142,7 @@ const TeamActivity: React.FC = () => {
       title: 'Sub Task',
       dataIndex: 'subTask',
       key: 'subTask',
+      width: 180,
       render: (text: string, record: TaskRow) => (
         <Select
           value={record.subTask}
@@ -158,6 +160,7 @@ const TeamActivity: React.FC = () => {
       title: 'Today Task',
       dataIndex: 'todayTask',
       key: 'todayTask',
+      width: 200,
       render: (text: string, record: TaskRow) => (
         <Input
           value={record.todayTask}
@@ -170,6 +173,7 @@ const TeamActivity: React.FC = () => {
       title: 'Resource',
       dataIndex: 'resourceName',
       key: 'resourceName',
+      width: 140,
       render: (text: string, record: TaskRow) => (
         <Select
           value={record.resourceName}
@@ -187,6 +191,7 @@ const TeamActivity: React.FC = () => {
       title: 'Phase & Sprint',
       dataIndex: 'phaseAndSprint',
       key: 'phaseAndSprint',
+      width: 160,
       render: (text: string, record: TaskRow) => (
         <Select
           value={record.phaseAndSprint}
@@ -204,6 +209,7 @@ const TeamActivity: React.FC = () => {
       title: 'Status',
       dataIndex: 'status',
       key: 'status',
+      width: 130,
       render: (text: string, record: TaskRow) => (
         <Select
           value={record.status}
@@ -221,6 +227,7 @@ const TeamActivity: React.FC = () => {
       title: 'Start Date',
       dataIndex: 'taskStartDate',
       key: 'taskStartDate',
+      width: 140,
       render: (text: string, record: TaskRow) => (
         <DatePicker
           value={record.taskStartDate && dayjs.isDayjs(record.taskStartDate) ? record.taskStartDate : null}
@@ -233,6 +240,7 @@ const TeamActivity: React.FC = () => {
       title: 'End Date',
       dataIndex: 'taskEndDate',
       key: 'taskEndDate',
+      width: 140,
       render: (text: string, record: TaskRow) => (
         <DatePicker
           value={record.taskEndDate && dayjs.isDayjs(record.taskEndDate) ? record.taskEndDate : null}
@@ -245,6 +253,7 @@ const TeamActivity: React.FC = () => {
       title: 'Comments',
       dataIndex: 'comments',
       key: 'comments',
+      width: 200,
       render: (text: string, record: TaskRow) => (
         <Input.TextArea
           value={record.comments}
@@ -257,6 +266,8 @@ const TeamActivity: React.FC = () => {
     {
       title: 'Actions',
       key: 'actions',
+      width: 80,
+      fixed: 'right' as const,
       render: (text: string, record: TaskRow) => (
         <Button
           type="text"
@@ -270,13 +281,20 @@ const TeamActivity: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '24px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
+    <div style={{ 
+      padding: '24px', 
+      backgroundColor: '#f5f5f5', 
+      minHeight: 'calc(100vh - 64px)',
+      width: '100%',
+      overflow: 'auto'
+    }}>
       <Card 
         title="Team Activity" 
         style={{ 
           marginBottom: '24px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-          borderRadius: '8px'
+          borderRadius: '8px',
+          width: '100%'
         }}
       >
         <Form
@@ -344,16 +362,18 @@ const TeamActivity: React.FC = () => {
           </Button>
         }
       >
-        <Table
-          columns={columns}
-          dataSource={tasks}
-          rowKey="id"
-          pagination={false}
-          scroll={{ x: 1200 }}
-          size="small"
-          bordered
-          style={{ marginBottom: '16px' }}
-        />
+        <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
+          <Table
+            columns={columns}
+            dataSource={tasks}
+            rowKey="id"
+            pagination={false}
+            scroll={{ x: 1400 }}
+            size="small"
+            bordered
+            style={{ minWidth: '1400px' }}
+          />
+        </div>
         
         <div style={{ marginTop: '24px', textAlign: 'center' }}>
           <Button 
