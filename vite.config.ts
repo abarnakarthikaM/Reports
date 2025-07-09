@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: 5000,
+    allowedHosts: [
+      '1265145e-6581-49c1-b373-4d9bd1c508e7-00-1j8ecgvmgmodn.pike.replit.dev'
+    ]
   },
 })
